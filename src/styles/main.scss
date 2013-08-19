@@ -1,0 +1,244 @@
+@import 'compass/css3/border-radius';
+@import 'compass/css3/text-shadow';
+@import 'compass/css3/transform';
+@import 'compass/css3/transition';
+@import 'compass/css3/box-shadow';
+@import 'compass/css3/box-sizing';
+@import 'normalize';
+@import 'solarized-dark';
+
+$navy: hsl(224, 100%, 10%);
+
+@mixin breakpoint($point) {
+  @if $point == big-phone {
+    @media (max-width: 1000px) { @content; }
+  }
+  @else if $point == small-phone {
+    @media (max-width: 630px)  { @content; }
+  }
+}
+
+$codeFont: Consolas, "Lucida Console", monospace;
+
+@mixin mainShadow {
+  @include box-shadow(0 0 3px 0 rgba(0, 0, 0, 0.5));
+}
+
+* {
+  @include box-sizing(border-box);
+}
+
+html {
+  background: hsl(0, 0%, 82%);
+}
+
+body {
+  position: relative;
+  max-width: 1600px;
+  margin: 0 auto;
+  font-family: helvetica neue, helvetica, sans-serif;
+  font-size: 16px;
+  background: $navy;
+  @include mainShadow;
+
+  @include breakpoint(big-phone) {
+    font-size: 14px;
+  }
+}
+
+header {
+  position: relative;
+  z-index: 101;
+  width: 1000px;
+  margin: 0 auto 700px;
+  color: white;
+  @include text-shadow(2px 2px black);
+}
+
+.title {
+  margin: 0;
+  padding: 1.1em 0 .2em;
+  text-align: center;
+  font-size: 9em;
+}
+
+.sub-title {
+  position: relative;
+  z-index: 101;
+  margin: 0 0 0;
+  font-size: 3em;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: hsl(28, 77%, 55%);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.video-wrapper {
+  margin: 0px 0px 60px;
+
+  iframe {
+    @include mainShadow;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  max-width: 1600px;
+  width: 100%;
+  bottom: 0;
+  z-index: 100;
+}
+
+.text-wrapper {
+  background: white;
+  padding: 10px 30px;
+  @include mainShadow;
+
+  // Full width code blocks
+  & > pre {
+    margin: 0 -30px;
+  }
+}
+
+.content-center {
+  position: relative;
+  z-index: 101;
+  max-width: 780px;
+  width: 92%;
+  margin: 0 auto 2em;
+
+  @include breakpoint(big-phone) {
+    width: 92%;
+    margin-left: 4%;
+  }
+
+  p {
+    line-height: 1.4em;
+    font-size: 1em;
+  }
+
+  .anchor {
+    color: black;
+  }
+
+  a {
+    color: hsl(202, 82%, 59%);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+p code {
+  background: hsl(240, 100%, 96%);
+  border: 1px solid hsl(0, 0%, 90%);
+  padding: 0 0.23em;
+  font-size: .8em;
+  @include border-radius(3px);
+}
+
+code {
+  margin: 0;
+  padding: 0;
+  font-family: $codeFont;
+}
+
+pre {
+  font-family: $codeFont;
+  overflow: auto;
+}
+
+.highlight {
+  font-size: 1.1em;
+  line-height: 1.5em;
+  background-color: hsl(0, 0%, 21%);
+  color: hsl(0, 0%, 79%);
+
+  pre {
+    padding: 25px;
+  }
+}
+
+blockquote {
+  border-left: 4px solid hsl(0, 0%, 87%);
+  padding: 0 15px;
+  color: hsl(0, 0%, 47%);
+}
+
+.theme-wrapper {
+  width: 100%;
+  margin: 30px 0;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  @include mainShadow;
+
+  &:hover .theme-name {
+    background: rgba(70, 116, 156, 0.95);
+  }
+}
+
+.theme-img {
+  width: 100%;
+  float: right;
+}
+
+.theme-name {
+  background: hsla(0, 0%, 0%, .8);
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  padding: 20px;
+  font-weight: 300;
+  color: white;
+  font-size: 1.7em;
+  @include transition(all 0.24s ease-out);
+}
+
+.ribbon-wrapper {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 200px;
+  width: 200px;
+}
+
+.github-ribbon {
+  font-size: .8em;
+  position: absolute;
+  z-index: 101;
+  top: 3.5em;
+  right: -3.5em;
+  padding: .6em 3.6em;
+  font-weight: 700;
+  background: hsl(349, 71%, 31%);
+  color: hsl(0, 100%, 100%);
+  text-decoration: none;
+  @include mainShadow;
+  @include text-shadow(1px 1px black);
+  @include transform( rotate(45deg));
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @include breakpoint(small-phone) {
+    display: none;
+  }
+}
+
+// Clearfix
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
