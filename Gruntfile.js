@@ -1,10 +1,4 @@
-var mountFolder = function (connect, dir) {
-  return connect.static(require('path').resolve(dir));
-};
-
 module.exports = function (grunt) {
-
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.initConfig({
     watch: {
@@ -19,7 +13,7 @@ module.exports = function (grunt) {
         tasks: ['compass']
       },
       pages: {
-        files: ['src/pages/**', 'posts/**', 'src/layouts/**'],
+        files: ['posts/**', 'src/layouts/**'],
         tasks: ['pages']
       },
       copy: {
@@ -27,10 +21,13 @@ module.exports = function (grunt) {
         tasks: ['copy']
       }
     },
-    pages: {
+    'gh-pages': {
       options: {
-        pageSrc: 'src/pages'
+        base: 'dist'
       },
+      src: ['**']
+    },
+    pages: {
       posts: {
         src: 'posts',
         dest: 'dist',
@@ -46,8 +43,7 @@ module.exports = function (grunt) {
           middleware: function (connect) {
             return [
               require('grunt-contrib-livereload/lib/utils').livereloadSnippet,
-              mountFolder(connect, 'dist'),
-              mountFolder(connect, 'src')
+              connect.static(require('path').resolve('dist'))
             ];
           }
         }
@@ -100,6 +96,8 @@ module.exports = function (grunt) {
     'open',
     'watch'
   ]);
+
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.registerTask('default', 'server');
 };
