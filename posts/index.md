@@ -69,7 +69,7 @@ Your theme must conform to the following folder structure in order to work with 
 ├── cabin.json
 ├── posts
 │   └── Sample posts
-├── site
+├── dist
 │   └── Generated site files
 └── src
     ├── images
@@ -83,17 +83,3 @@ Your theme must conform to the following folder structure in order to work with 
 ```
 
 The best way to learn about how to develop a theme is by referencing the [default theme](https://github.com/colinwren/Candy).
-
-# Changelog
-
-**0.1.2** - Built-in LiveReload functionality added.
-
-**0.1.1** - The Gruntfile now copies fonts from the src/styles/fonts folder.
-
-**0.1.0** - `grunt server` is now the default task. The Gruntfile template now copys images, vanilla css, and scripts and no longer copies .ico and .htaccess files.
-
-**0.0.2** - Use git clone instead of downloading theme zips from GitHub repos.
-
-**0.0.1** - Only copy specified file extensions from themes.
-
-**0.0.0** - Initial push.
