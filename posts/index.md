@@ -77,12 +77,11 @@ Here is an example `cabin.json` file which states that the project supports Sass
 
 Your theme must conform to the following folder structure in order to work with the Gruntfile that Cabin generates.
 ```
-├── README.md
 ├── cabin.json
-├── posts
-│   └── Sample posts
 ├── dist
 │   └── Generated site files
+├── posts
+│   └── Sample posts
 └── src
     ├── images
     │   └── Theme image files
@@ -90,6 +89,8 @@ Your theme must conform to the following folder structure in order to work with 
     │   └── Theme layout templates
     ├── pages
     │   └── Theme page templates
+    └── scripts
+    │   └── Theme JavaScripts
     └── styles
         └── Theme stylesheets
 ```
