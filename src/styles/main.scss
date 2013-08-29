@@ -114,11 +114,6 @@ header {
   background: white;
   padding: 10px 30px;
   @include mainShadow;
-
-  // Full width code blocks
-  & > pre {
-    margin: 0 -30px;
-  }
 }
 
 .content-center {
