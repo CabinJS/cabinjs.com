@@ -138,7 +138,7 @@ header {
   }
 
   a {
-    color: hsl(202, 82%, 59%);
+    color: #4183CD;
     text-decoration: none;
 
     &:hover {
@@ -164,17 +164,38 @@ code {
 pre {
   font-family: $codeFont;
   overflow: auto;
+  white-space: pre;
+  -webkit-overflow-scrolling: touch;
 }
 
-.highlight {
+.highlight, .cli-code {
   font-size: 1.1em;
   line-height: 1.5em;
-  background-color: hsl(0, 0%, 21%);
-  color: hsl(0, 0%, 79%);
+  background-color: #4A3539;
+  color: #78AC6A;
 
   pre {
     padding: 25px;
   }
+}
+
+textarea {
+  resize: none;
+}
+
+.cli-code {
+  width: 100%;
+  padding: 23px;
+  font-family: monospace;
+  height: 82px;
+}
+
+.highlight .nt {
+  color: #559B27 !important;
+}
+
+.highlight .s2 {
+    color: #FAFF71 !important
 }
 
 blockquote {
@@ -230,7 +251,7 @@ blockquote {
   right: -3.5em;
   padding: .6em 3.6em;
   font-weight: 700;
-  background: hsl(349, 71%, 31%);
+  background: #87172c;
   color: hsl(0, 100%, 100%);
   text-decoration: none;
   @include mainShadow;
