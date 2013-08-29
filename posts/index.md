@@ -4,22 +4,24 @@ date:   2013-12-15
 ----
 # Getting started
 
-First install Cabin and Grunt globally with the following command:
-```bash
-npm install -g cabin grunt-cli
-```
-You can then scaffold a static generator with the following command:
-```bash
-cabin new myBlog colinwren/Candy
-```
-The first parameter is the name of the destination folder, and the second is the GitHub username and repository name of a `theme` to use for the site. If the `theme` parameter is left blank, the [default theme](https://github.com/colinwren/Candy) will be used.
+First install Cabin and Grunt globally with this command:
 
-After scaffolding a site generator, you can run it by entering the project directory and running grunt with this command:
-```bash
-cd myBlog && grunt
-```
-This will build your site, start a static file server, open a browser tab with the site's homepage, and start a watch process to rebuild your site when your source files change. Try editing or creating a new markdown file in the `posts` folder (if you are using the default theme) and upon save your site will be automatically rebuilt. When your site has been rebuilt, your browser will automatically refresh with your updated site.
+<textarea readonly class="cli-code">npm install -g cabin grunt-cli</textarea>
+
+Then scaffold a static site generator with the `cabin new` command:
+
+<textarea readonly class="cli-code">cabin new myBlog colinwren/Candy</textarea>
+
+The first parameter is the name of the destination folder, and the second is the GitHub username and repository name of a `theme` to use for the site. If the `theme` parameter is left blank, the [default theme](http://colinwren.github.io/Candy/) will be used.
+
+After scaffolding a site generator, you can run it by entering the project directory and running the default Grunt task with this command:
+
+<textarea readonly class="cli-code">cd myBlog && grunt</textarea>
+
+This will build your site, start a static file server, open a browser tab with the site's homepage, and start a watch process to rebuild your site when source files change. Try editing or creating a new markdown file in the `posts` folder and upon saving, your site will automatically be rebuilt. When your site rebuilds, your browser will automatically refresh with your updated site.
+
 # Themes
+
 Cabin themes provide styling and structure for your static site project. They work great out of the box and as starting points for more customized sites.
 
 ## Featured themes
@@ -34,11 +36,21 @@ Cabin themes provide styling and structure for your static site project. They wo
   <span class="theme-name">Blok</span>
 </a>
 
+## Recommended Deployment Tools
+
+**GitHub Pages**
+
+When deploying to GitHub pages, use the [grunt-gh-pages](https://github.com/tschaub/grunt-gh-pages) plugin.
+
+**Amazon S3**
+
+When deploying to Amazon S3, use the [grunt-s3](https://github.com/pifantastic/grunt-s3) plugin.
+
 ## Creating Themes
 
 ### Configuration
 
-The only file explicitly required is a `cabin.json` configuration in the root of the repo. This file describes what CSS preprocessors and template languages that your theme supports as well as the configuration for [grunt-pages](https://github.com/ChrisWren/grunt-pages). We currently support EJS and Jade templates and the Sass and LESS style languages.
+The only file explicitly required is a `cabin.json` configuration in the root of the repo. This file describes what CSS preprocessors and template languages that your theme supports as well as the configuration for [grunt-pages](https://github.com/CabinJS/grunt-pages). We currently support EJS and Jade templates and the Sass and LESS preprocessors.
 
 Here is an example `cabin.json` file which states that the project supports Sass, Jade, and has the specified config for the grunt-pages task:
 ```json
