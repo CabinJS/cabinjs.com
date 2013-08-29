@@ -8,6 +8,7 @@
 @import 'solarized-dark';
 
 $navy: hsl(224, 100%, 10%);
+$offBlack: hsl(0, 0, 4%);
 
 @mixin breakpoint($point) {
   @if $point == big-phone {
@@ -39,8 +40,8 @@ body {
   font-family: helvetica neue, helvetica, sans-serif;
   font-size: 16px;
   background: $navy;
+  color: hsl(0, 0, 4%);
   @include mainShadow;
-
   @include breakpoint(big-phone) {
     font-size: 14px;
   }
@@ -53,6 +54,9 @@ header {
   margin: 0 auto 700px;
   color: white;
   @include text-shadow(2px 2px black);
+  @include breakpoint(small-phone) {
+    width: 100%;
+  }
 }
 
 .title {
@@ -60,6 +64,10 @@ header {
   padding: 1.1em 0 .2em;
   text-align: center;
   font-size: 9em;
+  @include breakpoint(small-phone) {
+    font-size: 6em;
+    padding-top: 0;
+  }
 }
 
 .sub-title {
@@ -68,10 +76,13 @@ header {
   margin: 0 0 0;
   font-size: 3em;
   text-align: center;
-
+  @include breakpoint(small-phone) {
+    font-size: 2em;
+    padding: .5em;
+  }
   a {
     text-decoration: none;
-    color: hsl(28, 77%, 55%);
+    color: #e58634;
 
     &:hover {
       text-decoration: underline;
@@ -84,6 +95,10 @@ header {
 
   iframe {
     @include mainShadow;
+    @include breakpoint(small-phone) {
+      max-width: 100%;
+      max-height: 200px;
+    }
   }
 }
 
@@ -124,7 +139,7 @@ header {
   }
 
   .anchor {
-    color: black;
+    color: $offBlack;
   }
 
   a {
