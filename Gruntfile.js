@@ -73,6 +73,7 @@ module.exports = function (grunt) {
           cwd: 'src',
           dest: 'dist',
           src: [
+            'CNAME',
             'images/**',
             'styles/**.css',
             'styles/fonts/**',
