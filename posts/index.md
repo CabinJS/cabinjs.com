@@ -38,11 +38,11 @@ Cabin themes provide styling and structure for your static site project. They wo
 
 ## Recommended Deployment Tools
 
-**GitHub Pages**
+### GitHub Pages
 
 When deploying to GitHub pages, use the [grunt-gh-pages](https://github.com/tschaub/grunt-gh-pages) plugin.
 
-**Amazon S3**
+### Amazon S3
 
 When deploying to Amazon S3, use the [grunt-s3](https://github.com/pifantastic/grunt-s3) plugin.
 
