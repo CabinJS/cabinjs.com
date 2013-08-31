@@ -945,56 +945,54 @@ pre {
   font-family: Consolas, "Lucida Console", monospace;
   overflow: auto;
   white-space: pre;
-  -webkit-overflow-scrolling: touch;
 }
 
-/* line 174, ../../src/styles/main.scss */
+/* line 173, ../../src/styles/main.scss */
 .highlight, .cli-code {
   font-size: 1.1em;
   line-height: 1.5em;
   background-color: #4A3539;
   color: #78AC6A;
 }
-/* line 180, ../../src/styles/main.scss */
+/* line 179, ../../src/styles/main.scss */
 .highlight pre, .cli-code pre {
   padding: 25px;
 }
 
-/* line 185, ../../src/styles/main.scss */
+/* line 184, ../../src/styles/main.scss */
 textarea {
   resize: none;
 }
 
-/* line 189, ../../src/styles/main.scss */
+/* line 188, ../../src/styles/main.scss */
 .cli-code {
   width: 100%;
   white-space: nowrap;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
+  overflow: auto;
   padding: 23px;
   line-height: 34px;
   font-family: monospace;
   height: 82px;
 }
 
-/* line 200, ../../src/styles/main.scss */
+/* line 198, ../../src/styles/main.scss */
 .highlight .nt {
   color: #559B27 !important;
 }
 
-/* line 204, ../../src/styles/main.scss */
+/* line 202, ../../src/styles/main.scss */
 .highlight .s2 {
   color: #faff71 !important;
 }
 
-/* line 208, ../../src/styles/main.scss */
+/* line 206, ../../src/styles/main.scss */
 blockquote {
   border-left: 4px solid #dedede;
   padding: 0 15px;
   color: #787878;
 }
 
-/* line 214, ../../src/styles/main.scss */
+/* line 212, ../../src/styles/main.scss */
 .theme-wrapper {
   width: 100%;
   margin: 30px 0;
@@ -1005,18 +1003,18 @@ blockquote {
   -moz-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
 }
-/* line 222, ../../src/styles/main.scss */
+/* line 220, ../../src/styles/main.scss */
 .theme-wrapper:hover .theme-name {
   background: rgba(70, 116, 156, 0.95);
 }
 
-/* line 227, ../../src/styles/main.scss */
+/* line 225, ../../src/styles/main.scss */
 .theme-img {
   width: 100%;
   float: right;
 }
 
-/* line 232, ../../src/styles/main.scss */
+/* line 230, ../../src/styles/main.scss */
 .theme-name {
   background: rgba(0, 0, 0, 0.8);
   bottom: 0;
@@ -1032,14 +1030,14 @@ blockquote {
   transition: all 0.24s ease-out;
 }
 @media (max-width: 630px) {
-  /* line 232, ../../src/styles/main.scss */
+  /* line 230, ../../src/styles/main.scss */
   .theme-name {
     font-size: 1em;
     padding: 6px;
   }
 }
 
-/* line 248, ../../src/styles/main.scss */
+/* line 246, ../../src/styles/main.scss */
 .ribbon-wrapper {
   overflow: hidden;
   position: absolute;
@@ -1049,7 +1047,7 @@ blockquote {
   width: 200px;
 }
 
-/* line 257, ../../src/styles/main.scss */
+/* line 255, ../../src/styles/main.scss */
 .github-ribbon {
   font-size: .8em;
   position: absolute;
@@ -1071,18 +1069,18 @@ blockquote {
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 272, ../../src/styles/main.scss */
+/* line 270, ../../src/styles/main.scss */
 .github-ribbon:hover {
   text-decoration: underline;
 }
 @media (max-width: 630px) {
-  /* line 257, ../../src/styles/main.scss */
+  /* line 255, ../../src/styles/main.scss */
   .github-ribbon {
     display: none;
   }
 }
 
-/* line 282, ../../src/styles/main.scss */
+/* line 280, ../../src/styles/main.scss */
 .group:after {
   content: "";
   display: table;
