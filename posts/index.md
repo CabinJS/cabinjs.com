@@ -18,7 +18,9 @@ After scaffolding a site generator, you can run it by entering the project direc
 
 <textarea readonly class="cli-code">cd myBlog && grunt</textarea>
 
-This will build your site, start a static file server, open a browser tab with the site's homepage, and start a watch process to rebuild your site when source files change. Try editing or creating a new markdown file in the `posts` folder and upon saving, your site will automatically be rebuilt. When your site rebuilds, your browser will automatically refresh with your updated site.
+This will build your site, start a static file server, open a browser tab with the site's homepage, and start a watch process to rebuild your site when source files change.
+
+Try editing a markdown file in the `posts` folder or css in the `src/styles` folder and upon saving, your site will automatically be rebuilt with the updated content/styles. When you edit markdown, your browser will automatically refresh to view new content, and when editing styles, they will be injected directly into the page for an immediate update.
 
 # Themes
 
