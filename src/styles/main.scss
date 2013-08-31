@@ -239,6 +239,10 @@ blockquote {
   color: white;
   font-size: 1.7em;
   @include transition(all 0.24s ease-out);
+  @include breakpoint(small-phone) {
+    font-size: 1em;
+    padding: 6px;
+  }
 }
 
 .ribbon-wrapper {
