@@ -4,7 +4,8 @@ $(function() {
     marginBottom: $(window).height() + 10 - $header.height()
   });
   $('.cli-code').on('click', function () {
-    $(this).focus();
-    $(this).select();
+  	var $cliCode = $(this);
+    $cliCode.focus();
+    $cliCode.select();
   });
 });
