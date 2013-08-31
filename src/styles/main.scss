@@ -114,6 +114,9 @@ header {
   background: white;
   padding: 10px 30px;
   @include mainShadow;
+  @include breakpoint(small-phone) {
+    padding: 20px 10px;
+  }
 }
 
 .content-center {
