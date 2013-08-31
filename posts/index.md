@@ -29,13 +29,11 @@ Cabin themes provide styling and structure for your static site project. They wo
 ## Featured themes
 
 <a class="theme-wrapper group" href="http://colinwren.github.io/Candy/">
-  <span class="theme-name">Candy</span>
   <img class="theme-img" src="./images/Candy.jpg"/>
 </a>
 
 <a class="theme-wrapper group" href="http://colinwren.github.io/Blok/">
   <img class="theme-img" src="./images/Blok.jpg"/>
-  <span class="theme-name">Blok</span>
 </a>
 
 ## Recommended Deployment Tools
