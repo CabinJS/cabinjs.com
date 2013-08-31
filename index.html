@@ -20,20 +20,18 @@
         <iframe width="780" height="449" src="//www.youtube.com/embed/aXlYyCYIsE0?rel=0" frameborder="0" allowfullscreen></iframe>
       </div>
       <div class="text-wrapper"><a name="getting-started" class="anchor" href="#getting-started"><h1>Getting started</h1>
-</a><p>First install Cabin and Grunt globally with the following command:</p>
-<pre><code class="lang-bash"><div class="highlight"><pre>npm install -g cabin grunt-cli
-</pre></div>
-</code></pre>
-<p>You can then scaffold a static generator with the following command:</p>
-<pre><code class="lang-bash"><div class="highlight"><pre>cabin new myBlog colinwren/Candy
-</pre></div>
-</code></pre>
-<p>The first parameter is the name of the destination folder, and the second is the GitHub username and repository name of a <code>theme</code> to use for the site. If the <code>theme</code> parameter is left blank, the <a href="https://github.com/colinwren/Candy">default theme</a> will be used.</p>
-<p>After scaffolding a site generator, you can run it by entering the project directory and running grunt with this command:</p>
-<pre><code class="lang-bash"><div class="highlight"><pre><span class="nb">cd </span>myBlog <span class="o">&amp;&amp;</span> grunt
-</pre></div>
-</code></pre>
-<p>This will build your site, start a static file server, open a browser tab with the site&#39;s homepage, and start a watch process to rebuild your site when your source files change. Try editing or creating a new markdown file in the <code>posts</code> folder (if you are using the default theme) and upon save your site will be automatically rebuilt. When your site has been rebuilt, your browser will automatically refresh with your updated site.</p>
+</a><p>First install Cabin and Grunt globally with this command:</p>
+<textarea readonly class="cli-code">npm install -g cabin grunt-cli</textarea>
+
+<p>Then scaffold a static site generator with the <code>cabin new</code> command:</p>
+<textarea readonly class="cli-code">cabin new myBlog colinwren/Candy</textarea>
+
+<p>The first parameter is the name of the destination folder, and the second is the GitHub username and repository name of a <code>theme</code> to use for the site. If the <code>theme</code> parameter is left blank, the <a href="http://colinwren.github.io/Candy/">default theme</a> will be used.</p>
+<p>After scaffolding a site generator, you can run it by entering the project directory and running the default Grunt task with this command:</p>
+<textarea readonly class="cli-code">cd myBlog &amp;&amp; grunt</textarea>
+
+<p>This will build your site, start a static file server, open a browser tab with the site&#39;s homepage, and start a watch process to rebuild your site when source files change.</p>
+<p>Try editing a markdown file in the <code>posts</code> folder or css in the <code>src/styles</code> folder and upon saving, your site will automatically be rebuilt with the updated content/styles. When you edit markdown, your browser will automatically refresh to view new content, and when editing styles, they will be injected directly into the page for an immediate update.</p>
 <a name="themes" class="anchor" href="#themes"><h1>Themes</h1>
 </a><p>Cabin themes provide styling and structure for your static site project. They work great out of the box and as starting points for more customized sites.</p>
 <a name="featured-themes" class="anchor" href="#featured-themes"><h2>Featured themes</h2>
@@ -45,9 +43,14 @@
   <img class="theme-img" src="./images/Blok.jpg"/>
   <span class="theme-name">Blok</span>
 </a></p>
+<a name="recommended-deployment-tools" class="anchor" href="#recommended-deployment-tools"><h2>Recommended Deployment Tools</h2>
+</a><a name="github-pages" class="anchor" href="#github-pages"><h3>GitHub Pages</h3>
+</a><p>When deploying to GitHub pages, use the <a href="https://github.com/tschaub/grunt-gh-pages">grunt-gh-pages</a> plugin.</p>
+<a name="amazon-s3" class="anchor" href="#amazon-s3"><h3>Amazon S3</h3>
+</a><p>When deploying to Amazon S3, use the <a href="https://github.com/pifantastic/grunt-s3">grunt-s3</a> plugin.</p>
 <a name="creating-themes" class="anchor" href="#creating-themes"><h2>Creating Themes</h2>
 </a><a name="configuration" class="anchor" href="#configuration"><h3>Configuration</h3>
-</a><p>The only file explicitly required is a <code>cabin.json</code> configuration in the root of the repo. This file describes what CSS preprocessors and template languages that your theme supports as well as the configuration for <a href="https://github.com/ChrisWren/grunt-pages">grunt-pages</a>. We currently support EJS and Jade templates and the Sass and LESS style languages.</p>
+</a><p>The only file explicitly required is a <code>cabin.json</code> configuration in the root of the repo. This file describes what CSS preprocessors and template languages that your theme supports as well as the configuration for <a href="https://github.com/CabinJS/grunt-pages">grunt-pages</a>. We currently support EJS and Jade templates and the Sass and LESS preprocessors.</p>
 <p>Here is an example <code>cabin.json</code> file which states that the project supports Sass, Jade, and has the specified config for the grunt-pages task:</p>
 <pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
   <span class="nt">&quot;style&quot;</span><span class="p">:</span> <span class="p">[</span>
@@ -70,12 +73,11 @@
 <p><strong>Note: the configuration of the cabin.json must have <code>dist</code> as the destination folder and the theme files must match the folder structure described below.</strong></p>
 <a name="theme-file-locations" class="anchor" href="#theme-file-locations"><h3>Theme file locations</h3>
 </a><p>Your theme must conform to the following folder structure in order to work with the Gruntfile that Cabin generates.</p>
-<pre><code><div class="highlight"><pre><span class="err">├──</span> <span class="nx">README</span><span class="p">.</span><span class="nx">md</span>
-<span class="err">├──</span> <span class="nx">cabin</span><span class="p">.</span><span class="nx">json</span>
+<pre><code><div class="highlight"><pre><span class="err">├──</span> <span class="nx">cabin</span><span class="p">.</span><span class="nx">json</span>
+<span class="err">├──</span> <span class="nx">dist</span>
+<span class="err">│</span>   <span class="err">└──</span> <span class="nx">Generated</span> <span class="nx">site</span> <span class="nx">files</span>
 <span class="err">├──</span> <span class="nx">posts</span>
 <span class="err">│</span>   <span class="err">└──</span> <span class="nx">Sample</span> <span class="nx">posts</span>
-<span class="err">├──</span> <span class="nx">site</span>
-<span class="err">│</span>   <span class="err">└──</span> <span class="nx">Generated</span> <span class="nx">site</span> <span class="nx">files</span>
 <span class="err">└──</span> <span class="nx">src</span>
     <span class="err">├──</span> <span class="nx">images</span>
     <span class="err">│</span>   <span class="err">└──</span> <span class="nx">Theme</span> <span class="nx">image</span> <span class="nx">files</span>
@@ -83,18 +85,13 @@
     <span class="err">│</span>   <span class="err">└──</span> <span class="nx">Theme</span> <span class="nx">layout</span> <span class="nx">templates</span>
     <span class="err">├──</span> <span class="nx">pages</span>
     <span class="err">│</span>   <span class="err">└──</span> <span class="nx">Theme</span> <span class="nx">page</span> <span class="nx">templates</span>
+    <span class="err">└──</span> <span class="nx">scripts</span>
+    <span class="err">│</span>   <span class="err">└──</span> <span class="nx">Theme</span> <span class="nx">JavaScripts</span>
     <span class="err">└──</span> <span class="nx">styles</span>
         <span class="err">└──</span> <span class="nx">Theme</span> <span class="nx">stylesheets</span>
 </pre></div>
 </code></pre>
 <p>The best way to learn about how to develop a theme is by referencing the <a href="https://github.com/colinwren/Candy">default theme</a>.</p>
-<a name="changelog" class="anchor" href="#changelog"><h1>Changelog</h1>
-</a><p><strong>0.1.2</strong> - Built-in LiveReload functionality added.</p>
-<p><strong>0.1.1</strong> - The Gruntfile now copies fonts from the src/styles/fonts folder.</p>
-<p><strong>0.1.0</strong> - <code>grunt server</code> is now the default task. The Gruntfile template now copys images, vanilla css, and scripts and no longer copies .ico and .htaccess files.</p>
-<p><strong>0.0.2</strong> - Use git clone instead of downloading theme zips from GitHub repos.</p>
-<p><strong>0.0.1</strong> - Only copy specified file extensions from themes.</p>
-<p><strong>0.0.0</strong> - Initial push.</p>
 
       </div>
     </div>
