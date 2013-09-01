@@ -12,13 +12,13 @@ First install Cabin and Grunt globally with this command:
 
 Then scaffold a static site generator with the `cabin new` command:
 
-<textarea readonly class="cli-code">cabin new myBlog colinwren/Candy</textarea>
+<textarea readonly class="cli-code">cabin new blog colinwren/Candy</textarea>
 
 The first parameter is the name of the destination folder, and the second is the GitHub username and repository name of a `theme` to use for the site. If the `theme` parameter is left blank, the [default theme](http://colinwren.github.io/Candy/) will be used.
 
 After scaffolding a site generator, you can run it by entering the project directory and running the default Grunt task with this command:
 
-<textarea readonly class="cli-code">cd myBlog && grunt</textarea>
+<textarea readonly class="cli-code">cd blog && grunt</textarea>
 
 This will build your site, start a static file server, open a browser tab with the site's homepage, and start a watch process to rebuild your site when source files change.
 
