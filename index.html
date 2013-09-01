@@ -90,6 +90,15 @@
         <span class="err">└──</span> <span class="nx">Theme</span> <span class="nx">stylesheets</span>
 </pre></div>
 </code></pre>
+<a name="testing-your-theme" class="anchor" href="#testing-your-theme"><h3>Testing your theme</h3>
+</a><p>To test your theme, run Cabin with the <code>--local</code> flag. For example if you had a theme in a folder called <code>themeFolder</code> and you wanted to make sure it was working properly, you would run the following command to install it locally into the <code>site</code> folder:</p>
+<pre><code class="lang-bash"><div class="highlight"><pre>cabin new site themeFolder -l
+</pre></div>
+</code></pre>
+<p>Then you would run the following command to make sure the theme will work as expected for users once installed:</p>
+<pre><code class="lang-bash"><div class="highlight"><pre><span class="nb">cd </span>site <span class="o">&amp;&amp;</span> grunt
+</pre></div>
+</code></pre>
 <p>The best way to learn about how to develop a theme is by referencing the <a href="https://github.com/colinwren/Candy">default theme</a>.</p>
 
       </div>
