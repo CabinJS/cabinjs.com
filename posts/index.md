@@ -97,4 +97,18 @@ Your theme must conform to the following folder structure in order to work with 
         └── Theme stylesheets
 ```
 
+### Testing your theme
+
+To test your theme, run Cabin with the `--local` flag. For example if you had a theme in a folder called `themeFolder` and you wanted to make sure it was working properly, you would run the following command to install it locally into the `site` folder:
+
+```bash
+cabin new site themeFolder -l
+```
+
+Then you would run the following command to make sure the theme will work as expected for users once installed:
+
+```bash
+cd site && grunt
+```
+
 The best way to learn about how to develop a theme is by referencing the [default theme](https://github.com/colinwren/Candy).
