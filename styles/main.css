@@ -968,21 +968,22 @@ textarea {
 .cli-code {
   width: 100%;
   white-space: nowrap;
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
   padding: 23px;
   line-height: 34px;
   font-family: monospace;
   height: 82px;
 }
 
-/* line 198, ../../src/styles/main.scss */
+/* line 199, ../../src/styles/main.scss */
 blockquote {
   border-left: 4px solid #dedede;
   padding: 0 15px;
   color: #787878;
 }
 
-/* line 204, ../../src/styles/main.scss */
+/* line 205, ../../src/styles/main.scss */
 .theme-wrapper {
   width: 100%;
   margin: 30px 0;
@@ -995,7 +996,7 @@ blockquote {
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
 }
 
-/* line 214, ../../src/styles/main.scss */
+/* line 215, ../../src/styles/main.scss */
 .theme-img {
   width: 100%;
   float: right;
@@ -1004,7 +1005,7 @@ blockquote {
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
 }
 
-/* line 220, ../../src/styles/main.scss */
+/* line 221, ../../src/styles/main.scss */
 .ribbon-wrapper {
   overflow: hidden;
   position: absolute;
@@ -1014,7 +1015,7 @@ blockquote {
   width: 200px;
 }
 
-/* line 229, ../../src/styles/main.scss */
+/* line 230, ../../src/styles/main.scss */
 .github-ribbon {
   font-size: .8em;
   position: absolute;
@@ -1036,18 +1037,18 @@ blockquote {
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 244, ../../src/styles/main.scss */
+/* line 245, ../../src/styles/main.scss */
 .github-ribbon:hover {
   text-decoration: underline;
 }
 @media (max-width: 630px) {
-  /* line 229, ../../src/styles/main.scss */
+  /* line 230, ../../src/styles/main.scss */
   .github-ribbon {
     display: none;
   }
 }
 
-/* line 254, ../../src/styles/main.scss */
+/* line 255, ../../src/styles/main.scss */
 .group:after {
   content: "";
   display: table;
