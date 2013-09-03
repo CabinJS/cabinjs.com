@@ -248,7 +248,7 @@ figure {
  */
 /* line 253, ../../src/styles/_normalize.scss */
 fieldset {
-  border: 1px solid #c0c0c0;
+  border: 1px solid silver;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -807,7 +807,7 @@ header {
 /* line 62, ../../src/styles/main.scss */
 .title {
   margin: 0;
-  padding: 1.1em 0 .2em;
+  padding: 1.1em 0 0.2em;
   text-align: center;
   font-size: 9em;
 }
@@ -1022,7 +1022,7 @@ blockquote {
   z-index: 101;
   top: 3.5em;
   right: -3.5em;
-  padding: .6em 3.6em;
+  padding: 0.6em 3.6em;
   font-weight: 700;
   background: #87172c;
   color: white;
