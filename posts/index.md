@@ -52,18 +52,20 @@ When deploying to Amazon S3, use the [grunt-s3](https://github.com/pifantastic/g
 
 ### Configuration
 
-The only file explicitly required is a `cabin.json` configuration in the root of the repo. This file describes what CSS preprocessors and template languages that your theme supports as well as the configuration for [grunt-pages](https://github.com/CabinJS/grunt-pages). We currently support EJS and Jade templates and the Sass and LESS preprocessors.
+The only files explicitly required are `package.json` and `cabin.json` in the root of the repo. The package.json must list grunt-pages and cabin as hard dependencies to make sure the theme works with the user's currently running Cabin version, and that the correct grunt-pages version is installed.
+
+The cabin.json file describes what CSS preprocessors and template engines that your theme supports as well as the configuration for [grunt-pages](https://github.com/CabinJS/grunt-pages). We currently support EJS and Jade template engines and the Sass and LESS preprocessors.
 
 Here is an example `cabin.json` file which states that the project supports Sass, Jade, and has the specified config for the grunt-pages task:
 ```json
 {
-  "style": [
+  "CSSPreprocessor": [
     "Sass"
   ],
-  "template": [
+  "templateEngine": [
     "Jade"
   ],
-  "gruntPages": {
+  "gruntPagesConfig": {
     "posts": {
       "src": "posts",
       "dest": "dist",
@@ -77,9 +79,10 @@ Here is an example `cabin.json` file which states that the project supports Sass
 
 ### Theme file locations
 
-Your theme must conform to the following folder structure in order to work with the Gruntfile that Cabin generates.
+Your theme must conform to the following folder structure in order to work with the Gruntfile that Cabin generates:
 ```
 ├── cabin.json
+├── package.json
 ├── dist
 │   └── Generated site files
 ├── posts
@@ -101,14 +104,11 @@ Your theme must conform to the following folder structure in order to work with 
 
 To test your theme, run Cabin with the `--local` flag. For example if you had a theme in a folder called `themeFolder` and you wanted to make sure it was working properly, you would run the following command to install it locally into the `site` folder:
 
-```bash
-cabin new site themeFolder -l
-```
+<textarea readonly class="cli-code">cabin new site themeFolder --local</textarea>
+
 
 Then you would run the following command to make sure the theme will work as expected for users once installed:
 
-```bash
-cd site && grunt
-```
+<textarea readonly class="cli-code">cd site && grunt</textarea>
 
 The best way to learn about how to develop a theme is by referencing the [default theme](https://github.com/colinwren/Candy).
