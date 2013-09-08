@@ -12,7 +12,7 @@ First install Cabin and Grunt globally with this command:
 
 Then scaffold a static site generator with the `cabin new` command:
 
-<textarea readonly class="cli-code">cabin new blog colinwren/Candy</textarea>
+<textarea readonly class="cli-code">cabin new blog CabinJS/Candy</textarea>
 
 The first parameter is the name of the destination folder, and the second is the GitHub username and repository name of a `theme` to use for the site. If the `theme` parameter is left blank, the [default theme](http://colinwren.github.io/Candy/) will be used.
 
@@ -30,7 +30,7 @@ Cabin themes provide styling and structure for your static site project. They wo
 
 ## Featured themes
 
-<a class="theme-wrapper group" href="http://colinwren.github.io/Candy/">
+<a class="theme-wrapper group" href="http://CabinJS.github.io/Candy/">
   <img class="theme-img" src="./images/Candy.jpg"/>
 </a>
 
@@ -111,4 +111,4 @@ Then you would run the following command to make sure the theme will work as exp
 
 <textarea readonly class="cli-code">cd site && grunt</textarea>
 
-The best way to learn about how to develop a theme is by referencing the [default theme](https://github.com/colinwren/Candy).
+The best way to learn about how to develop a theme is by referencing the [default theme](https://github.com/CabinJS/Candy).
