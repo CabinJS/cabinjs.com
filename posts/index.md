@@ -34,10 +34,6 @@ Cabin themes provide styling and structure for your static site project. They wo
   <img class="theme-img" src="./images/Candy.jpg"/>
 </a>
 
-<a class="theme-wrapper group" href="http://colinwren.github.io/Blok/">
-  <img class="theme-img" src="./images/Blok.jpg"/>
-</a>
-
 ## Recommended Deployment Tools
 
 ### GitHub Pages
