@@ -14,7 +14,7 @@ Then scaffold a static site generator with the `cabin new` command:
 
 <textarea readonly class="cli-code">cabin new blog CabinJS/Candy</textarea>
 
-The first parameter is the name of the destination folder, and the second is the GitHub username and repository name of a `theme` to use for the site. If the `theme` parameter is left blank, the [default theme](http://colinwren.github.io/Candy/) will be used.
+The first parameter is the name of the destination folder, and the second is the GitHub username and repository name of a `theme` to use for the site. If the `theme` parameter is left blank, the [default theme](http://CabinJS.github.io/Candy/) will be used.
 
 After scaffolding a site generator, you can run it by entering the project directory and running the default Grunt task with this command:
 
