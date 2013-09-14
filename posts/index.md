@@ -31,7 +31,7 @@ Cabin themes provide styling and structure for your static site project. They wo
 ## Featured themes
 
 <a class="theme-wrapper group" href="http://CabinJS.github.io/Candy/">
-  <img class="theme-img" src="./images/Candy.jpg"/>
+  <img class="theme-img" src="http://i.imgur.com/JKM27ib.png?1"/>
 </a>
 
 ## Recommended Deployment Tools
