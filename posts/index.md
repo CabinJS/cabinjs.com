@@ -22,7 +22,7 @@ After scaffolding a site generator, you can run it by entering the project direc
 
 This will build your site, start a static file server, open a browser tab with the site's homepage, and start a watch process to rebuild your site when source files change.
 
-Try editing a markdown file in the `posts` folder or CSS in the `src/styles` folder and upon saving, your site will automatically be rebuilt with the updated content or styles. When you edit markdown posts, your browser will automatically refresh to view new content, and when editing styles, the CSS will be injected directly into the page for an immediate update.
+Try editing a [markdown](http://daringfireball.net/projects/markdown/syntax#block) file in the `posts` folder or CSS in the `src/styles` folder and upon saving, your site will automatically be rebuilt with the updated content or styles. When you edit markdown posts, your browser will automatically refresh to view new content, and when editing styles, the CSS will be injected directly into the page for an immediate update.
 
 # Themes
 
@@ -31,7 +31,7 @@ Cabin themes provide styling and structure for your static site project. They wo
 ## Featured themes
 
 <a class="theme-wrapper group" href="http://CabinJS.github.io/Candy/">
-  <img class="theme-img" src="./images/Candy.jpg"/>
+  <img class="theme-img" src="http://i.imgur.com/JKM27ib.png?1"/>
 </a>
 
 ## Recommended Deployment Tools
