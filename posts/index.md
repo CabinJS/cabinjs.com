@@ -35,6 +35,14 @@ Cabin themes provide styling and structure for your static site project. They wo
   <img class="theme-img" src="http://i.imgur.com/JKM27ib.png?1"/>
 </a>
 
+<a class="theme-wrapper group" href="http://CabinJS.github.io/Blok/">
+  <img class="theme-img" src="http://i.imgur.com/CgppgNp.png"/>
+</a>
+
+<a class="theme-wrapper group" href="http://CabinJS.github.io/Canvas/">
+  <img class="theme-img" src="http://i.imgur.com/nLkDQ08.png"/>
+</a>
+
 ## Recommended Deployment Tools
 
 ### GitHub Pages
