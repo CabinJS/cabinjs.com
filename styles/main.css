@@ -1,3 +1,50 @@
+/*Icon Set: IcoMoon - Free -- http://keyamoon.com/icomoon/*/
+/*License:  CC BY 3.0 -- http://creativecommons.org/licenses/by/3.0/*/
+@font-face {
+  font-family: 'icomoon';
+  src: url("fonts/icomoon.eot");
+  src: url("fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("fonts/icomoon.woff") format("woff"), url("fonts/icomoon.ttf") format("truetype"), url("fonts/icomoon.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+/* line 15, ../../src/styles/_icons.scss */
+[data-icon]:before {
+  font-family: 'icomoon';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+/* line 33, ../../src/styles/_icons.scss */
+.icon-link, .header-link {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 43, ../../src/styles/_icons.scss */
+.icon-link:before, .header-link:before {
+  content: "\e008";
+}
+
 /* normalize.css v2.1.2 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -756,19 +803,19 @@ table {
   width: 100%;
 }
 
-/* line 28, ../../src/styles/main.scss */
+/* line 24, ../../src/styles/main.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 32, ../../src/styles/main.scss */
+/* line 28, ../../src/styles/main.scss */
 html {
   background: #d1d1d1;
 }
 
-/* line 36, ../../src/styles/main.scss */
+/* line 32, ../../src/styles/main.scss */
 body {
   position: relative;
   max-width: 1600px;
@@ -782,13 +829,13 @@ body {
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
 }
 @media (max-width: 1000px) {
-  /* line 36, ../../src/styles/main.scss */
+  /* line 32, ../../src/styles/main.scss */
   body {
     font-size: 14px;
   }
 }
 
-/* line 50, ../../src/styles/main.scss */
+/* line 46, ../../src/styles/main.scss */
 header {
   position: relative;
   z-index: 101;
@@ -798,13 +845,13 @@ header {
   text-shadow: 2px 2px black;
 }
 @media (max-width: 630px) {
-  /* line 50, ../../src/styles/main.scss */
+  /* line 46, ../../src/styles/main.scss */
   header {
     width: 100%;
   }
 }
 
-/* line 62, ../../src/styles/main.scss */
+/* line 58, ../../src/styles/main.scss */
 .title {
   margin: 0;
   padding: 1.1em 0 .2em;
@@ -812,14 +859,14 @@ header {
   font-size: 9em;
 }
 @media (max-width: 630px) {
-  /* line 62, ../../src/styles/main.scss */
+  /* line 58, ../../src/styles/main.scss */
   .title {
     font-size: 6em;
     padding-top: 0;
   }
 }
 
-/* line 73, ../../src/styles/main.scss */
+/* line 69, ../../src/styles/main.scss */
 .sub-title {
   position: relative;
   z-index: 101;
@@ -828,41 +875,41 @@ header {
   text-align: center;
 }
 @media (max-width: 630px) {
-  /* line 73, ../../src/styles/main.scss */
+  /* line 69, ../../src/styles/main.scss */
   .sub-title {
     font-size: 2em;
     padding: .5em;
   }
 }
-/* line 83, ../../src/styles/main.scss */
+/* line 79, ../../src/styles/main.scss */
 .sub-title a {
   text-decoration: none;
   color: #e58634;
 }
-/* line 87, ../../src/styles/main.scss */
+/* line 83, ../../src/styles/main.scss */
 .sub-title a:hover {
   text-decoration: underline;
 }
 
-/* line 93, ../../src/styles/main.scss */
+/* line 89, ../../src/styles/main.scss */
 .video-wrapper {
   margin: 0px 0px 60px;
 }
-/* line 96, ../../src/styles/main.scss */
+/* line 92, ../../src/styles/main.scss */
 .video-wrapper iframe {
   -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
 }
 @media (max-width: 630px) {
-  /* line 96, ../../src/styles/main.scss */
+  /* line 92, ../../src/styles/main.scss */
   .video-wrapper iframe {
     max-width: 100%;
     max-height: 200px;
   }
 }
 
-/* line 105, ../../src/styles/main.scss */
+/* line 101, ../../src/styles/main.scss */
 .backdrop {
   position: fixed;
   max-width: 1600px;
@@ -871,56 +918,70 @@ header {
   z-index: 100;
 }
 
-/* line 113, ../../src/styles/main.scss */
+/* line 109, ../../src/styles/main.scss */
 .text-wrapper {
   background: white;
-  padding: 10px 30px;
+  padding: 10px 50px;
   -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
 }
 @media (max-width: 630px) {
-  /* line 113, ../../src/styles/main.scss */
+  /* line 109, ../../src/styles/main.scss */
   .text-wrapper {
     padding: 20px 10px;
   }
 }
 
-/* line 122, ../../src/styles/main.scss */
+/* line 118, ../../src/styles/main.scss */
 .content-center {
   position: relative;
   z-index: 101;
-  max-width: 780px;
+  max-width: 820px;
   width: 92%;
   margin: 0 auto 2em;
 }
 @media (max-width: 1000px) {
-  /* line 122, ../../src/styles/main.scss */
+  /* line 118, ../../src/styles/main.scss */
   .content-center {
     width: 92%;
     margin-left: 4%;
   }
 }
-/* line 134, ../../src/styles/main.scss */
+/* line 130, ../../src/styles/main.scss */
 .content-center p {
   line-height: 1.6em;
   font-size: 1.2em;
 }
-/* line 139, ../../src/styles/main.scss */
+/* line 135, ../../src/styles/main.scss */
 .content-center .anchor {
   color: #0d0d0d;
 }
-/* line 143, ../../src/styles/main.scss */
+/* line 139, ../../src/styles/main.scss */
 .content-center a {
   color: #4183CD;
   text-decoration: none;
 }
-/* line 147, ../../src/styles/main.scss */
+/* line 143, ../../src/styles/main.scss */
 .content-center a:hover {
   text-decoration: underline;
 }
-
+/* line 148, ../../src/styles/main.scss */
+.content-center .anchor {
+  position: absolute;
+  margin-left: -1.7em;
+  padding-left: 1.7em;
+}
 /* line 153, ../../src/styles/main.scss */
+.content-center .anchor:focus {
+  outline: none;
+}
+/* line 157, ../../src/styles/main.scss */
+.content-center .anchor:hover {
+  text-decoration: none;
+}
+
+/* line 163, ../../src/styles/main.scss */
 p code {
   background: #ebebff;
   border: 1px solid #e6e6e6;
@@ -933,38 +994,38 @@ p code {
   border-radius: 3px;
 }
 
-/* line 161, ../../src/styles/main.scss */
+/* line 171, ../../src/styles/main.scss */
 code {
   margin: 0;
   padding: 0;
   font-family: Consolas, "Lucida Console", monospace;
 }
 
-/* line 167, ../../src/styles/main.scss */
+/* line 177, ../../src/styles/main.scss */
 pre {
   font-family: Consolas, "Lucida Console", monospace;
   overflow: auto;
   white-space: pre;
 }
 
-/* line 173, ../../src/styles/main.scss */
+/* line 183, ../../src/styles/main.scss */
 .highlight, .cli-code {
   font-size: 1.1em;
   line-height: 1.5em;
   background: #191820;
   color: #bababa;
 }
-/* line 179, ../../src/styles/main.scss */
+/* line 189, ../../src/styles/main.scss */
 .highlight pre, .cli-code pre {
   padding: 25px;
 }
 
-/* line 184, ../../src/styles/main.scss */
+/* line 194, ../../src/styles/main.scss */
 textarea {
   resize: none;
 }
 
-/* line 188, ../../src/styles/main.scss */
+/* line 198, ../../src/styles/main.scss */
 .cli-code {
   width: 100%;
   white-space: nowrap;
@@ -976,14 +1037,14 @@ textarea {
   height: 82px;
 }
 
-/* line 199, ../../src/styles/main.scss */
+/* line 209, ../../src/styles/main.scss */
 blockquote {
   border-left: 4px solid #dedede;
   padding: 0 15px;
   color: #787878;
 }
 
-/* line 205, ../../src/styles/main.scss */
+/* line 215, ../../src/styles/main.scss */
 .theme-wrapper {
   width: 100%;
   margin: 30px 0;
@@ -996,7 +1057,7 @@ blockquote {
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
 }
 
-/* line 215, ../../src/styles/main.scss */
+/* line 225, ../../src/styles/main.scss */
 .theme-img {
   width: 100%;
   float: right;
@@ -1005,7 +1066,7 @@ blockquote {
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
 }
 
-/* line 221, ../../src/styles/main.scss */
+/* line 231, ../../src/styles/main.scss */
 .ribbon-wrapper {
   overflow: hidden;
   position: absolute;
@@ -1015,7 +1076,7 @@ blockquote {
   width: 200px;
 }
 
-/* line 230, ../../src/styles/main.scss */
+/* line 240, ../../src/styles/main.scss */
 .github-ribbon {
   font-size: .8em;
   position: absolute;
@@ -1037,20 +1098,33 @@ blockquote {
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 245, ../../src/styles/main.scss */
+/* line 255, ../../src/styles/main.scss */
 .github-ribbon:hover {
   text-decoration: underline;
 }
 @media (max-width: 630px) {
-  /* line 230, ../../src/styles/main.scss */
+  /* line 240, ../../src/styles/main.scss */
   .github-ribbon {
     display: none;
   }
 }
 
-/* line 255, ../../src/styles/main.scss */
+/* line 265, ../../src/styles/main.scss */
 .group:after {
   content: "";
   display: table;
   clear: both;
+}
+
+/* line 273, ../../src/styles/main.scss */
+h1:hover .header-link, h2:hover .header-link, h3:hover .header-link,
+h4:hover .header-link, h5:hover .header-link, h6:hover .header-link {
+  visibility: visible;
+}
+
+/* line 278, ../../src/styles/main.scss */
+.header-link {
+  margin-left: -1.7em;
+  font-size: .65em;
+  visibility: hidden;
 }

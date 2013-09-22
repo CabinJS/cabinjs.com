@@ -16,11 +16,8 @@
       <h2 class="sub-title">Static site generator powered by&nbsp<a href="http://gruntjs.com/">Grunt</a></h2>
     </header>
     <div class="content-center">
-      <div class="video-wrapper">
-        <iframe width="780" height="449" src="//www.youtube.com/embed/aXlYyCYIsE0?rel=0" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div class="text-wrapper"><a name="getting-started" class="anchor" href="#getting-started"><h1>Getting started</h1>
-</a><p>To use Cabin you must have <a href="http://nodejs.org/">Node.js</a>, <a href="http://www.python.org/">Python</a> (for <a href="http://pygments.org/">Pygments</a>), and <a href="http://compass-style.org/">Compass</a> installed.</p>
+      <div class="text-wrapper"><h1><a name="getting-started"class="anchor" href="#getting-started"><span class="header-link"></span></a>Getting started</h1>
+<p>To use Cabin you must have <a href="http://nodejs.org/">Node.js</a>, <a href="http://www.python.org/">Python</a> (for <a href="http://pygments.org/">Pygments</a>), and <a href="http://compass-style.org/">Compass</a> installed.</p>
 <p>First install Cabin and Grunt globally with this command:</p>
 <textarea readonly class="cli-code">npm install -g cabin grunt-cli</textarea>
 
@@ -33,21 +30,105 @@
 
 <p>This will build your site, start a static file server, open a browser tab with the site&#39;s homepage, and start a watch process to rebuild your site when source files change.</p>
 <p>Try editing a <a href="http://daringfireball.net/projects/markdown/syntax#block">markdown</a> file in the <code>posts</code> folder or CSS in the <code>src/styles</code> folder and upon saving, your site will automatically be rebuilt with the updated content or styles. When you edit markdown posts, your browser will automatically refresh to view new content, and when editing styles, the CSS will be injected directly into the page for an immediate update.</p>
-<a name="themes" class="anchor" href="#themes"><h1>Themes</h1>
-</a><p>Cabin themes provide styling and structure for your static site project. They work great out of the box and as starting points for more customized sites.</p>
-<a name="featured-themes" class="anchor" href="#featured-themes"><h2>Featured themes</h2>
-</a><p><a class="theme-wrapper group" href="http://CabinJS.github.io/Candy/">
+<h1><a name="themes"class="anchor" href="#themes"><span class="header-link"></span></a>Themes</h1>
+<p>Cabin themes provide styling and structure for your static site project. They work great out of the box and as starting points for more customized sites.</p>
+<h2><a name="featured-themes"class="anchor" href="#featured-themes"><span class="header-link"></span></a>Featured themes</h2>
+<p><a class="theme-wrapper group" href="http://CabinJS.github.io/Candy/">
   <img class="theme-img" src="http://i.imgur.com/JKM27ib.png?1"/>
 </a></p>
-<a name="recommended-deployment-tools" class="anchor" href="#recommended-deployment-tools"><h2>Recommended Deployment Tools</h2>
-</a><a name="github-pages" class="anchor" href="#github-pages"><h3>GitHub Pages</h3>
-</a><p>When deploying to GitHub pages, use the <a href="https://github.com/tschaub/grunt-gh-pages">grunt-gh-pages</a> plugin.</p>
-<a name="amazon-s3" class="anchor" href="#amazon-s3"><h3>Amazon S3</h3>
-</a><p>When deploying to Amazon S3, use the <a href="https://github.com/pifantastic/grunt-s3">grunt-s3</a> plugin.</p>
-<a name="creating-themes" class="anchor" href="#creating-themes"><h2>Creating Themes</h2>
-</a><p>The best way to learn about how to develop a theme is by cloning the <a href="https://github.com/CabinJS/Canvas">Canvas theme</a> and altering the below files to customize your theme.</p>
-<a name="theme-file-locations" class="anchor" href="#theme-file-locations"><h3>Theme file locations</h3>
-</a><p>Your theme must conform to the following folder structure in order to work with the Gruntfile that Cabin generates:</p>
+<p><a class="theme-wrapper group" href="http://CabinJS.github.io/Blok/">
+  <img class="theme-img" src="http://i.imgur.com/CgppgNp.png"/>
+</a></p>
+<p><a class="theme-wrapper group" href="http://CabinJS.github.io/Canvas/">
+  <img class="theme-img" src="http://i.imgur.com/nLkDQ08.png"/>
+</a></p>
+<h2><a name="recommended-deployment-tools"class="anchor" href="#recommended-deployment-tools"><span class="header-link"></span></a>Recommended Deployment Tools</h2>
+<h3><a name="github-pages"class="anchor" href="#github-pages"><span class="header-link"></span></a>GitHub Pages</h3>
+<p>When deploying to GitHub pages, use the <a href="https://github.com/tschaub/grunt-gh-pages">grunt-gh-pages</a> plugin.</p>
+<p>First install grunt-gh-pages with this command:</p>
+<textarea readonly class="cli-code">npm install grunt-gh-pages --save-dev</textarea>
+
+<p>Now you can copy and paste the following <code>&#39;gh-pages&#39;</code> config property into your Gruntfile&#39;s initConfig call:</p>
+<pre><code class="lang-js"><div class="highlight"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
+  <span class="s1">&#39;gh-pages&#39;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">base</span><span class="o">:</span> <span class="s1">&#39;dist&#39;</span>
+    <span class="p">},</span>
+    <span class="nx">src</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;**&#39;</span><span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</code></pre>
+<p>Now you can alter the build task to use your repo&#39;s name as the baseUrl when deploying to GitHub pages:</p>
+<pre><code class="lang-js"><div class="highlight"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">registerTask</span><span class="p">(</span><span class="s1">&#39;build&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">target</span> <span class="o">===</span> <span class="s1">&#39;GHPages&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">gruntPagesConfig</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">baseUrl</span> <span class="o">=</span> <span class="s1">&#39;/MyRepoName/&#39;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">grunt</span><span class="p">.</span><span class="nx">task</span><span class="p">.</span><span class="nx">run</span><span class="p">([</span>
+    <span class="s1">&#39;clean&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;pages&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;compass&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;copy&#39;</span>
+  <span class="p">]);</span>
+<span class="p">});</span>
+</pre></div>
+</code></pre>
+<p><strong>Note: be sure to replace <code>MyRepoName</code> with the name of your repo</strong></p>
+<p>Finally you can add a <code>deploy</code> task which runs the <code>build</code> task with the GHPages target and then pushes to GitHub:</p>
+<pre><code class="lang-js"><div class="highlight"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">registerTask</span><span class="p">(</span><span class="s1">&#39;deploy&#39;</span><span class="p">,</span> <span class="p">[</span>
+  <span class="s1">&#39;build:GHPages&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;gh-pages&#39;</span>
+<span class="p">]);</span>
+</pre></div>
+</code></pre>
+<p>Now you can deploy your site by running the <code>grunt deploy</code> command.</p>
+<h3><a name="amazon-s3"class="anchor" href="#amazon-s3"><span class="header-link"></span></a>Amazon S3</h3>
+<p>When deploying to <a href="http://aws.amazon.com/s3/">Amazon S3</a>, use the <a href="https://github.com/pifantastic/grunt-s3">grunt-s3</a> plugin.</p>
+<p>First install grunt-s3 with this command:</p>
+<textarea readonly class="cli-code">npm install grunt-s3 --save-dev</textarea>
+
+<p>Then create a <code>grunt-aws.json</code> file with the following format in the root folder of the theme:</p>
+<pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
+  <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;your-aws-key&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;secret&quot;</span><span class="p">:</span> <span class="s2">&quot;your-aws-secret&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;bucket&quot;</span><span class="p">:</span> <span class="s2">&quot;your-s3-bucket&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</code></pre>
+<p>Now you can copy and paste the following <code>aws</code> and <code>s3</code> config properties into your Gruntfile&#39;s initConfig call:</p>
+<pre><code class="lang-js"><div class="highlight"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
+  <span class="nx">aws</span><span class="o">:</span> <span class="nx">grunt</span><span class="p">.</span><span class="nx">file</span><span class="p">.</span><span class="nx">readJSON</span><span class="p">(</span><span class="s1">&#39;./grunt-aws.json&#39;</span><span class="p">),</span>
+  <span class="nx">s3</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">key</span><span class="o">:</span> <span class="s1">&#39;&lt;%= aws.key %&gt;&#39;</span><span class="p">,</span>
+      <span class="nx">secret</span><span class="o">:</span> <span class="s1">&#39;&lt;%= aws.secret %&gt;&#39;</span><span class="p">,</span>
+      <span class="nx">bucket</span><span class="o">:</span> <span class="s1">&#39;&lt;%= aws.bucket %&gt;&#39;</span><span class="p">,</span>
+      <span class="nx">access</span><span class="o">:</span> <span class="s1">&#39;public-read&#39;</span>
+    <span class="p">},</span>
+    <span class="nx">dev</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">upload</span><span class="o">:</span> <span class="p">[{</span>
+        <span class="nx">src</span><span class="o">:</span> <span class="s1">&#39;dist/**&#39;</span><span class="p">,</span>
+        <span class="nx">rel</span><span class="o">:</span> <span class="s1">&#39;dist&#39;</span><span class="p">,</span>
+        <span class="nx">dest</span><span class="o">:</span> <span class="s1">&#39;/&#39;</span>
+      <span class="p">}]</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</code></pre>
+<p>For easy deployment, add this <code>deploy</code> task to the bottom of your file:</p>
+<pre><code class="lang-js"><div class="highlight"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">registerTask</span><span class="p">(</span><span class="s1">&#39;deploy&#39;</span><span class="p">,</span> <span class="p">[</span>
+  <span class="s1">&#39;build&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;s3&#39;</span>
+<span class="p">]);</span>
+</pre></div>
+</code></pre>
+<p>Now you can deploy your site by running the <code>grunt deploy</code> command.</p>
+<h2><a name="creating-themes"class="anchor" href="#creating-themes"><span class="header-link"></span></a>Creating Themes</h2>
+<p>The best way to learn about how to develop a theme is by cloning the starter <a href="https://github.com/CabinJS/Canvas">Canvas theme</a> and altering the below files to customize your theme.</p>
+<h3><a name="theme-file-locations"class="anchor" href="#theme-file-locations"><span class="header-link"></span></a>Theme file locations</h3>
+<p>Your theme must conform to the following folder structure in order to work with the Gruntfile that Cabin generates:</p>
 <pre><code><div class="highlight"><pre><span class="err">├──</span> <span class="nx">cabin</span><span class="p">.</span><span class="nx">json</span>
 <span class="err">├──</span> <span class="kr">package</span><span class="p">.</span><span class="nx">json</span>
 <span class="err">├──</span> <span class="nx">dist</span>
@@ -67,8 +148,8 @@
         <span class="err">└──</span> <span class="nx">Theme</span> <span class="nx">stylesheets</span>
 </pre></div>
 </code></pre>
-<a name="configuring-themes" class="anchor" href="#configuring-themes"><h3>Configuring themes</h3>
-</a><p>The only files explicitly required are the <code>package.json</code> and <code>cabin.json</code> in the root of the theme repo. </p>
+<h3><a name="configuring-themes"class="anchor" href="#configuring-themes"><span class="header-link"></span></a>Configuring themes</h3>
+<p>The only files explicitly required are the <code>package.json</code> and <code>cabin.json</code> in the root of the theme repo. </p>
 <p>The <code>package.json</code> must list grunt-pages and cabin as hard dependencies to make sure the theme works with the user&#39;s currently running Cabin version, and that the correct grunt-pages version is installed with the theme.</p>
 <p>The <code>cabin.json</code> file describes what CSS preprocessors and template engines that your theme supports as well as the configuration for <a href="https://github.com/CabinJS/grunt-pages">grunt-pages</a>. We currently support the EJS and Jade template engines and the Sass and LESS preprocessors.</p>
 <p>Here is an example <code>cabin.json</code> file which states that the project supports Sass, Jade, and has the specified config for the grunt-pages task:</p>
@@ -90,8 +171,8 @@
 <span class="p">}</span>
 </pre></div>
 </code></pre>
-<a name="testing-your-theme" class="anchor" href="#testing-your-theme"><h3>Testing your theme</h3>
-</a><p>To test your theme, run Cabin with the <code>--local</code> flag. For example if you had a theme in a folder called <code>themeFolder</code> and you wanted to make sure it was working properly, you would run the following command to install it locally into the <code>site</code> folder:</p>
+<h3><a name="testing-your-theme"class="anchor" href="#testing-your-theme"><span class="header-link"></span></a>Testing your theme</h3>
+<p>To test your theme, run Cabin with the <code>--local</code> flag. For example if you had a theme in a folder called <code>themeFolder</code> and you wanted to make sure it was working properly, you would run the following command to install it locally into the <code>site</code> folder:</p>
 <textarea readonly class="cli-code">cabin new site themeFolder --local</textarea>
 
 <p>Then you would run the following command to make sure the theme will work as expected for users once installed:</p>
