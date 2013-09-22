@@ -1,7 +1,8 @@
-----
-title: index
-date:   2013-12-15
-----
+{
+  title: "index",
+  date:   "2013-12-15"
+}
+
 # Getting started
 
 To use Cabin you must have [Node.js](http://nodejs.org/), [Python](http://www.python.org/) (for [Pygments](http://pygments.org/)), and [Compass](http://compass-style.org/) installed.
