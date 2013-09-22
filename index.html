@@ -13,7 +13,7 @@
     <div class="ribbon-wrapper"><a href="https://github.com/CabinJS/Cabin" class="github-ribbon"><span>Fork me on GitHub</span></a></div><img src="./images/cabinpic.png" class="backdrop">
     <header class="group">
       <h1 class="title">Cabin</h1>
-      <h2 class="sub-title">Static site generator powered by <a href="http://gruntjs.com/">Grunt</a></h2>
+      <h2 class="sub-title">Static site generator powered by&nbsp<a href="http://gruntjs.com/">Grunt</a></h2>
     </header>
     <div class="content-center">
       <div class="video-wrapper">
@@ -27,12 +27,12 @@
 <p>Then scaffold a static site generator with the <code>cabin new</code> command:</p>
 <textarea readonly class="cli-code">cabin new blog CabinJS/Candy</textarea>
 
-<p>The first parameter is the name of the destination folder, and the second is the GitHub username and repository name of a <code>theme</code> to use for the site. If the <code>theme</code> parameter is left blank, the <a href="http://colinwren.github.io/Candy/">default theme</a> will be used.</p>
+<p>The first parameter is the name of the destination folder, and the second is the GitHub username and repository name of a <code>theme</code> to use for the site. If the <code>theme</code> parameter is left blank, the <a href="http://CabinJS.github.io/Candy/">default theme</a> will be used.</p>
 <p>After scaffolding a site generator, you can run it by entering the project directory and running the default Grunt task with this command:</p>
 <textarea readonly class="cli-code">cd blog &amp;&amp; grunt</textarea>
 
 <p>This will build your site, start a static file server, open a browser tab with the site&#39;s homepage, and start a watch process to rebuild your site when source files change.</p>
-<p>Try editing a markdown file in the <code>posts</code> folder or css in the <code>src/styles</code> folder and upon saving, your site will automatically be rebuilt with the updated content/styles. When you edit markdown, your browser will automatically refresh to view new content, and when editing styles, they will be injected directly into the page for an immediate update.</p>
+<p>Try editing a <a href="http://daringfireball.net/projects/markdown/syntax#block">markdown</a> file in the <code>posts</code> folder or CSS in the <code>src/styles</code> folder and upon saving, your site will automatically be rebuilt with the updated content or styles. When you edit markdown posts, your browser will automatically refresh to view new content, and when editing styles, the CSS will be injected directly into the page for an immediate update.</p>
 <a name="themes" class="anchor" href="#themes"><h1>Themes</h1>
 </a><p>Cabin themes provide styling and structure for your static site project. They work great out of the box and as starting points for more customized sites.</p>
 <a name="featured-themes" class="anchor" href="#featured-themes"><h2>Featured themes</h2>
@@ -45,9 +45,32 @@
 <a name="amazon-s3" class="anchor" href="#amazon-s3"><h3>Amazon S3</h3>
 </a><p>When deploying to Amazon S3, use the <a href="https://github.com/pifantastic/grunt-s3">grunt-s3</a> plugin.</p>
 <a name="creating-themes" class="anchor" href="#creating-themes"><h2>Creating Themes</h2>
-</a><a name="configuration" class="anchor" href="#configuration"><h3>Configuration</h3>
-</a><p>The only files explicitly required are <code>package.json</code> and <code>cabin.json</code> in the root of the repo. The package.json must list grunt-pages and cabin as hard dependencies to make sure the theme works with the user&#39;s currently running Cabin version, and that the correct grunt-pages version is installed.</p>
-<p>The cabin.json file describes what CSS preprocessors and template engines that your theme supports as well as the configuration for <a href="https://github.com/CabinJS/grunt-pages">grunt-pages</a>. We currently support EJS and Jade template engines and the Sass and LESS preprocessors.</p>
+</a><p>The best way to learn about how to develop a theme is by cloning the <a href="https://github.com/CabinJS/Canvas">Canvas theme</a> and altering the below files to customize your theme.</p>
+<a name="theme-file-locations" class="anchor" href="#theme-file-locations"><h3>Theme file locations</h3>
+</a><p>Your theme must conform to the following folder structure in order to work with the Gruntfile that Cabin generates:</p>
+<pre><code><div class="highlight"><pre><span class="err">├──</span> <span class="nx">cabin</span><span class="p">.</span><span class="nx">json</span>
+<span class="err">├──</span> <span class="kr">package</span><span class="p">.</span><span class="nx">json</span>
+<span class="err">├──</span> <span class="nx">dist</span>
+<span class="err">│</span>   <span class="err">└──</span> <span class="nx">Generated</span> <span class="nx">site</span> <span class="nx">files</span>
+<span class="err">├──</span> <span class="nx">posts</span>
+<span class="err">│</span>   <span class="err">└──</span> <span class="nx">Sample</span> <span class="nx">markdown</span> <span class="nx">posts</span>
+<span class="err">└──</span> <span class="nx">src</span>
+    <span class="err">├──</span> <span class="nx">images</span>
+    <span class="err">│</span>   <span class="err">└──</span> <span class="nx">Theme</span> <span class="nx">image</span> <span class="nx">files</span>
+    <span class="err">├──</span> <span class="nx">layouts</span>
+    <span class="err">│</span>   <span class="err">└──</span> <span class="nx">Theme</span> <span class="nx">layout</span> <span class="nx">templates</span>
+    <span class="err">├──</span> <span class="nx">pages</span>
+    <span class="err">│</span>   <span class="err">└──</span> <span class="nx">Theme</span> <span class="nx">page</span> <span class="nx">templates</span>
+    <span class="err">└──</span> <span class="nx">scripts</span>
+    <span class="err">│</span>   <span class="err">└──</span> <span class="nx">Theme</span> <span class="nx">JavaScripts</span>
+    <span class="err">└──</span> <span class="nx">styles</span>
+        <span class="err">└──</span> <span class="nx">Theme</span> <span class="nx">stylesheets</span>
+</pre></div>
+</code></pre>
+<a name="configuring-themes" class="anchor" href="#configuring-themes"><h3>Configuring themes</h3>
+</a><p>The only files explicitly required are the <code>package.json</code> and <code>cabin.json</code> in the root of the theme repo. </p>
+<p>The <code>package.json</code> must list grunt-pages and cabin as hard dependencies to make sure the theme works with the user&#39;s currently running Cabin version, and that the correct grunt-pages version is installed with the theme.</p>
+<p>The <code>cabin.json</code> file describes what CSS preprocessors and template engines that your theme supports as well as the configuration for <a href="https://github.com/CabinJS/grunt-pages">grunt-pages</a>. We currently support the EJS and Jade template engines and the Sass and LESS preprocessors.</p>
 <p>Here is an example <code>cabin.json</code> file which states that the project supports Sass, Jade, and has the specified config for the grunt-pages task:</p>
 <pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
   <span class="nt">&quot;CSSPreprocessor&quot;</span><span class="p">:</span> <span class="p">[</span>
@@ -67,37 +90,12 @@
 <span class="p">}</span>
 </pre></div>
 </code></pre>
-<p><strong>Note: the configuration of the cabin.json must have <code>dist</code> as the destination folder and the theme files must match the folder structure described below.</strong></p>
-<a name="theme-file-locations" class="anchor" href="#theme-file-locations"><h3>Theme file locations</h3>
-</a><p>Your theme must conform to the following folder structure in order to work with the Gruntfile that Cabin generates:</p>
-<pre><code><div class="highlight"><pre><span class="err">├──</span> <span class="nx">cabin</span><span class="p">.</span><span class="nx">json</span>
-<span class="err">├──</span> <span class="kr">package</span><span class="p">.</span><span class="nx">json</span>
-<span class="err">├──</span> <span class="nx">dist</span>
-<span class="err">│</span>   <span class="err">└──</span> <span class="nx">Generated</span> <span class="nx">site</span> <span class="nx">files</span>
-<span class="err">├──</span> <span class="nx">posts</span>
-<span class="err">│</span>   <span class="err">└──</span> <span class="nx">Sample</span> <span class="nx">posts</span>
-<span class="err">└──</span> <span class="nx">src</span>
-    <span class="err">├──</span> <span class="nx">images</span>
-    <span class="err">│</span>   <span class="err">└──</span> <span class="nx">Theme</span> <span class="nx">image</span> <span class="nx">files</span>
-    <span class="err">├──</span> <span class="nx">layouts</span>
-    <span class="err">│</span>   <span class="err">└──</span> <span class="nx">Theme</span> <span class="nx">layout</span> <span class="nx">templates</span>
-    <span class="err">├──</span> <span class="nx">pages</span>
-    <span class="err">│</span>   <span class="err">└──</span> <span class="nx">Theme</span> <span class="nx">page</span> <span class="nx">templates</span>
-    <span class="err">└──</span> <span class="nx">scripts</span>
-    <span class="err">│</span>   <span class="err">└──</span> <span class="nx">Theme</span> <span class="nx">JavaScripts</span>
-    <span class="err">└──</span> <span class="nx">styles</span>
-        <span class="err">└──</span> <span class="nx">Theme</span> <span class="nx">stylesheets</span>
-</pre></div>
-</code></pre>
 <a name="testing-your-theme" class="anchor" href="#testing-your-theme"><h3>Testing your theme</h3>
 </a><p>To test your theme, run Cabin with the <code>--local</code> flag. For example if you had a theme in a folder called <code>themeFolder</code> and you wanted to make sure it was working properly, you would run the following command to install it locally into the <code>site</code> folder:</p>
 <textarea readonly class="cli-code">cabin new site themeFolder --local</textarea>
 
-
 <p>Then you would run the following command to make sure the theme will work as expected for users once installed:</p>
 <textarea readonly class="cli-code">cd site &amp;&amp; grunt</textarea>
-
-<p>The best way to learn about how to develop a theme is by referencing the <a href="https://github.com/CabinJS/Candy">default theme</a>.</p>
 
       </div>
     </div>
