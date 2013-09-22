@@ -49,13 +49,108 @@ Cabin themes provide styling and structure for your static site project. They wo
 
 When deploying to GitHub pages, use the [grunt-gh-pages](https://github.com/tschaub/grunt-gh-pages) plugin.
 
+First install grunt-gh-pages with this command:
+
+<textarea readonly class="cli-code">npm install grunt-gh-pages --save-dev</textarea>
+
+Now you can copy and paste the following `'gh-pages'` config property into your Gruntfile's initConfig call:
+
+```js
+grunt.initConfig({
+  'gh-pages': {
+    options: {
+      base: 'dist'
+    },
+    src: ['**']
+  }
+});
+```
+
+Now you can alter the build task to use your repo's name as the baseUrl when deploying to GitHub pages:
+
+```js
+grunt.registerTask('build', function(target) {
+  if (target === 'GHPages') {
+    gruntPagesConfig.options.data.baseUrl = '/MyRepoName/';
+  }
+
+  grunt.task.run([
+    'clean',
+    'pages',
+    'compass',
+    'copy'
+  ]);
+});
+```
+**Note: be sure to replace `MyRepoName` with the name of your repo**
+
+Finally you can add a `deploy` task which runs the `build` task with the GHPages target and then pushes to GitHub:
+
+```js
+grunt.registerTask('deploy', [
+  'build:GHPages',
+  'gh-pages'
+]);
+
+```
+
+Now you can deploy your site by running the `grunt deploy` command.
+
 ### Amazon S3
 
-When deploying to Amazon S3, use the [grunt-s3](https://github.com/pifantastic/grunt-s3) plugin.
+When deploying to [Amazon S3](http://aws.amazon.com/s3/), use the [grunt-s3](https://github.com/pifantastic/grunt-s3) plugin.
+
+First install grunt-s3 with this command:
+
+<textarea readonly class="cli-code">npm install grunt-s3 --save-dev</textarea>
+
+Then create a `grunt-aws.json` file with the following format in the root folder of the theme:
+
+```json
+{
+  "key": "your-aws-key",
+  "secret": "your-aws-secret",
+  "bucket": "your-s3-bucket"
+}
+```
+
+Now you can copy and paste the following `aws` and `s3` config properties into your Gruntfile's initConfig call:
+
+```js
+grunt.initConfig({
+  aws: grunt.file.readJSON('./grunt-aws.json'),
+  s3: {
+    options: {
+      key: '<%= aws.key %>',
+      secret: '<%= aws.secret %>',
+      bucket: '<%= aws.bucket %>',
+      access: 'public-read'
+    },
+    dev: {
+      upload: [{
+        src: 'dist/**',
+        rel: 'dist',
+        dest: '/'
+      }]
+    }
+  }
+});
+```
+
+For easy deployment, add this `deploy` task to the bottom of your file:
+
+```js
+grunt.registerTask('deploy', [
+  'build',
+  's3'
+]);
+```
+
+Now you can deploy your site by running the `grunt deploy` command.
 
 ## Creating Themes
 
-The best way to learn about how to develop a theme is by cloning the [Canvas theme](https://github.com/CabinJS/Canvas) and altering the below files to customize your theme.
+The best way to learn about how to develop a theme is by cloning the starter [Canvas theme](https://github.com/CabinJS/Canvas) and altering the below files to customize your theme.
 
 ### Theme file locations
 
