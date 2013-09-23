@@ -1,5 +1,5 @@
 {
-  "name": "blog",
+  "name": "cabin-site",
   "version": "0.0.0",
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -12,7 +12,11 @@
     "grunt-open": "~0.2.0",
     "grunt-contrib-watch": "~0.4.3",
     "matchdep": "~0.1.1",
-    "grunt-gh-pages": "~0.7.1"
+    "grunt-gh-pages": "~0.7.1",
+    "grunt-mdlint": "0.0.0"
+  },
+  "scripts": {
+    "test": "grunt test"
   },
   "engines": {
     "node": ">=0.10.0"
