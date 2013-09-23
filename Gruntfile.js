@@ -81,8 +81,13 @@ module.exports = function (grunt) {
           ]
         }]
       }
-    }
+    },
+    mdlint: ['*.md']
   });
+
+  grunt.registerTask('test', [
+    'mdlint'
+  ]);
 
   grunt.registerTask('deploy', [
     'build',
