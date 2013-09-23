@@ -3,6 +3,7 @@
   date:   "2013-12-15"
 }
 
+Simple and extensible static site generator powered by [Grunt](http://gruntjs.com/).
 # Getting started
 
 To use Cabin you must have [Node.js](http://nodejs.org/), [Python](http://www.python.org/) (for [Pygments](http://pygments.org/)), and [Compass](http://compass-style.org/) installed.

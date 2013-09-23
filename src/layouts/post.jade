@@ -9,15 +9,12 @@ html
     link(rel="icon", type="image/png", href="./images/cabin.png")
     link(rel="stylesheet", href="./styles/main.css")
   body
-    .ribbon-wrapper
-      a.github-ribbon(href="https://github.com/CabinJS/Cabin")
-        span Fork me on GitHub
-    img.backdrop(src="./images/cabinpic.png")
-    header.group
-      h1.title Cabin
-      h2.sub-title Static site generator powered by&nbsp
-        a(href="http://gruntjs.com/") Grunt
-    .content-center
+    .center
+      a.ribbon(href="https://github.com/you")
+        img(style="position: absolute; top: 0; right: 0; border: 0;", src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png", alt="Fork me on GitHub")
+      .group
+        img.cabin(src="/images/cabin.png", alt="cabin logo")
+        h1.title Cabin
       .text-wrapper
         != post.content
 
