@@ -54,7 +54,7 @@ First install grunt-gh-pages with this command:
 
 <textarea readonly class="cli-code">npm install grunt-gh-pages --save-dev</textarea>
 
-Now you can copy and paste the following `'gh-pages'` config property into your Gruntfile's initConfig call:
+Then copy and paste the following `'gh-pages'` config property into your Gruntfile's initConfig call:
 
 ```js
 grunt.initConfig({
@@ -67,7 +67,7 @@ grunt.initConfig({
 });
 ```
 
-Now you can alter the build task to use your repo's name as the baseUrl when deploying to GitHub pages:
+Then alter the `build` task to use your repo's name as the base URL when deploying to GitHub pages:
 
 ```js
 grunt.registerTask('build', function(target) {
@@ -105,7 +105,7 @@ First install grunt-s3 with this command:
 
 <textarea readonly class="cli-code">npm install grunt-s3 --save-dev</textarea>
 
-Then create a `grunt-aws.json` file with the following format in the root folder of the theme:
+Then create a `grunt-aws.json` file with the following format in the root folder of your site:
 
 ```json
 {
@@ -115,7 +115,7 @@ Then create a `grunt-aws.json` file with the following format in the root folder
 }
 ```
 
-Now you can copy and paste the following `aws` and `s3` config properties into your Gruntfile's initConfig call:
+Then copy and paste the following `aws` and `s3` config properties into your Gruntfile's initConfig call:
 
 ```js
 grunt.initConfig({
@@ -138,7 +138,7 @@ grunt.initConfig({
 });
 ```
 
-For easy deployment, add this `deploy` task to the bottom of your file:
+Finally you can add a `deploy` task which runs the `build` task and then pushes to S3:
 
 ```js
 grunt.registerTask('deploy', [
@@ -180,7 +180,7 @@ Your theme must conform to the following folder structure in order to work with 
 
 The only files explicitly required are the `package.json` and `cabin.json` in the root of the theme repo. 
 
-The `package.json` must list grunt-pages and cabin as hard dependencies to make sure the theme works with the user's currently running Cabin version, and that the correct grunt-pages version is installed with the theme.
+The `package.json` must list grunt-pages and cabin as hard dependencies(not devDependencies) to make sure the theme works with the user's currently running Cabin version, and that the correct grunt-pages version is installed with the theme.
 
 The `cabin.json` file describes what CSS preprocessors and template engines that your theme supports as well as the configuration for [grunt-pages](https://github.com/CabinJS/grunt-pages). We currently support the EJS and Jade template engines and the Sass and LESS preprocessors.
 
@@ -198,7 +198,7 @@ Here is an example `cabin.json` file which states that the project supports Sass
       "src": "posts",
       "dest": "dist",
       "layout": "src/layouts/post.jade",
-      "url": "blog/posts/:title"
+      "url": "blog/posts/:title/"
     }
   }
 }
