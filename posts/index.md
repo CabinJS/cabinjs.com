@@ -182,7 +182,7 @@ The only files explicitly required are the `package.json` and `cabin.json` in th
 
 The `package.json` must list grunt-pages and cabin as hard dependencies(not devDependencies) to make sure the theme works with the user's currently running Cabin version, and that the correct grunt-pages version is installed with the theme.
 
-The `cabin.json` file describes what CSS preprocessors and template engines that your theme supports as well as the configuration for [grunt-pages](https://github.com/CabinJS/grunt-pages). We currently support the EJS and Jade template engines and the Sass and LESS preprocessors.
+The `cabin.json` file describes what CSS preprocessors and template engines that your theme supports as well as the configuration for [grunt-pages](https://github.com/CabinJS/grunt-pages). We currently support the EJS and Jade template engines and the Sass and LESS CSS preprocessors.
 
 Here is an example `cabin.json` file which states that the project supports Sass, Jade, and has the specified config for the grunt-pages task:
 ```json
