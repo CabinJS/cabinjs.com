@@ -47,7 +47,7 @@
 <p>First install grunt-gh-pages with this command:</p>
 <textarea readonly class="cli-code">npm install grunt-gh-pages --save-dev</textarea>
 
-<p>Now you can copy and paste the following <code>&#39;gh-pages&#39;</code> config property into your Gruntfile&#39;s initConfig call:</p>
+<p>Then copy and paste the following <code>&#39;gh-pages&#39;</code> config property into your Gruntfile&#39;s initConfig call:</p>
 <pre><code class="lang-js"><div class="highlight"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
   <span class="s1">&#39;gh-pages&#39;</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
@@ -58,7 +58,7 @@
 <span class="p">});</span>
 </pre></div>
 </code></pre>
-<p>Now you can alter the build task to use your repo&#39;s name as the baseUrl when deploying to GitHub pages:</p>
+<p>Then alter the <code>build</code> task to use your repo&#39;s name as the base URL when deploying to GitHub pages:</p>
 <pre><code class="lang-js"><div class="highlight"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">registerTask</span><span class="p">(</span><span class="s1">&#39;build&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">target</span> <span class="o">===</span> <span class="s1">&#39;GHPages&#39;</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">gruntPagesConfig</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">baseUrl</span> <span class="o">=</span> <span class="s1">&#39;/MyRepoName/&#39;</span><span class="p">;</span>
@@ -87,7 +87,7 @@
 <p>First install grunt-s3 with this command:</p>
 <textarea readonly class="cli-code">npm install grunt-s3 --save-dev</textarea>
 
-<p>Then create a <code>grunt-aws.json</code> file with the following format in the root folder of the theme:</p>
+<p>Then create a <code>grunt-aws.json</code> file with the following format in the root folder of your site:</p>
 <pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
   <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;your-aws-key&quot;</span><span class="p">,</span>
   <span class="nt">&quot;secret&quot;</span><span class="p">:</span> <span class="s2">&quot;your-aws-secret&quot;</span><span class="p">,</span>
@@ -95,7 +95,7 @@
 <span class="p">}</span>
 </pre></div>
 </code></pre>
-<p>Now you can copy and paste the following <code>aws</code> and <code>s3</code> config properties into your Gruntfile&#39;s initConfig call:</p>
+<p>Then copy and paste the following <code>aws</code> and <code>s3</code> config properties into your Gruntfile&#39;s initConfig call:</p>
 <pre><code class="lang-js"><div class="highlight"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
   <span class="nx">aws</span><span class="o">:</span> <span class="nx">grunt</span><span class="p">.</span><span class="nx">file</span><span class="p">.</span><span class="nx">readJSON</span><span class="p">(</span><span class="s1">&#39;./grunt-aws.json&#39;</span><span class="p">),</span>
   <span class="nx">s3</span><span class="o">:</span> <span class="p">{</span>
@@ -116,7 +116,7 @@
 <span class="p">});</span>
 </pre></div>
 </code></pre>
-<p>For easy deployment, add this <code>deploy</code> task to the bottom of your file:</p>
+<p>Finally you can add a <code>deploy</code> task which runs the <code>build</code> task and then pushes to S3:</p>
 <pre><code class="lang-js"><div class="highlight"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">registerTask</span><span class="p">(</span><span class="s1">&#39;deploy&#39;</span><span class="p">,</span> <span class="p">[</span>
   <span class="s1">&#39;build&#39;</span><span class="p">,</span>
   <span class="s1">&#39;s3&#39;</span>
@@ -149,7 +149,7 @@
 </code></pre>
 <h3><a name="configuring-themes"class="anchor" href="#configuring-themes"><span class="header-link"></span></a>Configuring themes</h3>
 <p>The only files explicitly required are the <code>package.json</code> and <code>cabin.json</code> in the root of the theme repo. </p>
-<p>The <code>package.json</code> must list grunt-pages and cabin as hard dependencies to make sure the theme works with the user&#39;s currently running Cabin version, and that the correct grunt-pages version is installed with the theme.</p>
+<p>The <code>package.json</code> must list grunt-pages and cabin as hard dependencies(not devDependencies) to make sure the theme works with the user&#39;s currently running Cabin version, and that the correct grunt-pages version is installed with the theme.</p>
 <p>The <code>cabin.json</code> file describes what CSS preprocessors and template engines that your theme supports as well as the configuration for <a href="https://github.com/CabinJS/grunt-pages">grunt-pages</a>. We currently support the EJS and Jade template engines and the Sass and LESS preprocessors.</p>
 <p>Here is an example <code>cabin.json</code> file which states that the project supports Sass, Jade, and has the specified config for the grunt-pages task:</p>
 <pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
@@ -164,7 +164,7 @@
       <span class="nt">&quot;src&quot;</span><span class="p">:</span> <span class="s2">&quot;posts&quot;</span><span class="p">,</span>
       <span class="nt">&quot;dest&quot;</span><span class="p">:</span> <span class="s2">&quot;dist&quot;</span><span class="p">,</span>
       <span class="nt">&quot;layout&quot;</span><span class="p">:</span> <span class="s2">&quot;src/layouts/post.jade&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;blog/posts/:title&quot;</span>
+      <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;blog/posts/:title/&quot;</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
