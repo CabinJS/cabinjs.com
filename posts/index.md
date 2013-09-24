@@ -54,7 +54,7 @@ First install grunt-gh-pages with this command:
 
 <textarea readonly class="cli-code">npm install grunt-gh-pages --save-dev</textarea>
 
-Then copy and paste the following `'gh-pages'` config property into your Gruntfile's initConfig call:
+Then copy and paste the following `'gh-pages'` config property into your Gruntfile's `initConfig` call:
 
 ```js
 grunt.initConfig({
@@ -97,6 +97,56 @@ grunt.registerTask('deploy', [
 
 Now you can deploy your site by running the `grunt deploy` command.
 
+### FTP
+
+When deploying via FTP, use the [grunt-contrib-ftpush](https://github.com/inossidabile/grunt-contrib-ftpush) plugin.
+
+First install grunt-contrib-ftpush with this command:
+
+<textarea readonly class="cli-code">npm install grunt-contrib-ftpush --save-dev</textarea>
+
+Then create a `.ftpass` file with the following format in the root folder of your site:
+
+```json
+{
+  "key": {
+    "username": "your-ftp-username",
+    "password": "your-ftp-password"
+  }
+}
+```
+
+Then copy and paste the following `ftpush` config property into your Gruntfile's `initConfig` call:
+
+```js
+grunt.initConfig({
+  ftpush: {
+    build: {
+      auth: {
+        host: 'your-website.com',
+        port: 21,
+        authKey: 'key'
+      },
+      src: 'dist',
+      dest: 'your-remote-destination-folder',
+      simple: true,
+      exclusions: ['**.DS_Store']
+    }
+  }
+});
+```
+
+Finally you can add a `deploy` task which runs the `build` task and then pushes to your site via ftp:
+
+```js
+grunt.registerTask('deploy', [
+  'build',
+  'ftpush'
+]);
+```
+
+Now you can deploy your site by running the `grunt deploy` command.
+
 ### Amazon S3
 
 When deploying to [Amazon S3](http://aws.amazon.com/s3/), use the [grunt-s3](https://github.com/pifantastic/grunt-s3) plugin.
@@ -115,7 +165,7 @@ Then create a `grunt-aws.json` file with the following format in the root folder
 }
 ```
 
-Then copy and paste the following `aws` and `s3` config properties into your Gruntfile's initConfig call:
+Then copy and paste the following `aws` and `s3` config properties into your Gruntfile's `initConfig` call:
 
 ```js
 grunt.initConfig({
