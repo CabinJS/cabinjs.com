@@ -4,23 +4,30 @@
 }
 
 Simple and extensible static site generator powered by [Grunt](http://gruntjs.com/).
+
 # Getting started
 
 To use Cabin you must have [Node.js](http://nodejs.org/), [Python](http://www.python.org/) (for [Pygments](http://pygments.org/)), and [Compass](http://compass-style.org/) installed.
 
 First install Cabin and Grunt globally with this command:
 
-<textarea readonly class="cli-code">npm install -g cabin grunt-cli</textarea>
+```bash
+npm install -g cabin grunt-cli  
+```
 
 Then scaffold a static site generator with the `cabin new` command:
 
-<textarea readonly class="cli-code">cabin new blog CabinJS/Candy</textarea>
+```bash
+cabin new blog CabinJS/Candy
+```
 
 The first parameter is the name of the destination folder, and the second is the GitHub username and repository name of a `theme` to use for the site. If the `theme` parameter is left blank, the [default theme](http://CabinJS.github.io/Candy/) will be used.
 
 After scaffolding a site generator, you can run it by entering the project directory and running the default Grunt task with this command:
 
-<textarea readonly class="cli-code">cd blog && grunt</textarea>
+```bash
+cd blog && grunt
+```
 
 This will build your site, start a static file server, open a browser tab with the site's homepage, and start a watch process to rebuild your site when source files change.
 
@@ -52,7 +59,9 @@ When deploying to GitHub pages, use the [grunt-gh-pages](https://github.com/tsch
 
 First install grunt-gh-pages with this command:
 
-<textarea readonly class="cli-code">npm install grunt-gh-pages --save-dev</textarea>
+```bash
+npm install grunt-gh-pages --save-dev
+```
 
 Then copy and paste the following `'gh-pages'` config property into your Gruntfile's `initConfig` call:
 
@@ -103,7 +112,9 @@ When deploying via FTP, use the [grunt-contrib-ftpush](https://github.com/inossi
 
 First install grunt-contrib-ftpush with this command:
 
-<textarea readonly class="cli-code">npm install grunt-contrib-ftpush --save-dev</textarea>
+```bash
+npm install grunt-contrib-ftpush --save-dev
+```
 
 Then create a `.ftpass` file with the following format in the root folder of your site:
 
@@ -153,7 +164,9 @@ When deploying to [Amazon S3](http://aws.amazon.com/s3/), use the [grunt-s3](htt
 
 First install grunt-s3 with this command:
 
-<textarea readonly class="cli-code">npm install grunt-s3 --save-dev</textarea>
+```bash
+npm install grunt-s3 --save-dev
+```
 
 Then create a `grunt-aws.json` file with the following format in the root folder of your site:
 
@@ -258,8 +271,12 @@ Here is an example `cabin.json` file which states that the project supports Sass
 
 To test your theme, run Cabin with the `--local` flag. For example if you had a theme in a folder called `themeFolder` and you wanted to make sure it was working properly, you would run the following command to install it locally into the `site` folder:
 
-<textarea readonly class="cli-code">cabin new site themeFolder --local</textarea>
+```bash
+cabin new site themeFolder --local
+```
 
 Then you would run the following command to make sure the theme will work as expected for users once installed:
 
-<textarea readonly class="cli-code">cd site && grunt</textarea>
+```bash
+cd site && grunt
+```
