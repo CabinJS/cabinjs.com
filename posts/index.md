@@ -53,6 +53,35 @@ Cabin themes provide styling and structure for your static site project. They wo
 
 ## Recommended Deployment Tools
 
+### CouchApp
+
+When deploying as a CouchApp, you can either use this [fork](https://github.com/garbados/cabin), or configure it yourself. If you'd like to use the fork, do this:
+
+```bash
+npm install -g git://github.com/garbados/Cabin.git
+cabin new couch-cabin
+cd $_
+grunt deploy
+```
+
+This deploys the cabin to a CouchDB instance running at `http://localhost:5984`. To deploy to [Cloudant](https://cloudant.com), go into the root folder of your cabin, and edit `couchapp.json` to something like this:
+
+```json
+{
+  "app": "app.js",
+  "db": "https://USERNAME:PASSWORD@USERNAME.cloudant.com/cabin",
+  "options": {
+    "okay_if_exists": true
+  }
+}
+```
+
+Where USERNAME and PASSWORD are your Cloudant credentials.
+
+If you deploy as a CouchApp, make sure you set up a virtual host that points to your cabin, so it lives at a top-level url like <http://cabin.maxthayer.org>. Check out [Pretty URLs with Cloudant](https://cloudant.com/blog/pretty-urls-with-cloudant/) for details on how to set up virtual hosts with Cloudant.
+
+To configure your CouchApp Cabin yourself, follow [this guide](http://cabin.maxthayer.org/posts/cloudant-cabin/).
+
 ### GitHub Pages
 
 When deploying to GitHub pages, use the [grunt-gh-pages](https://github.com/tschaub/grunt-gh-pages) plugin.
