@@ -18,15 +18,18 @@
 <h1><a name="getting-started"class="anchor" href="#getting-started"><span class="header-link"></span></a>Getting started</h1>
 <p>To use Cabin you must have <a href="http://nodejs.org/">Node.js</a>, <a href="http://www.python.org/">Python</a> (for <a href="http://pygments.org/">Pygments</a>), and <a href="http://compass-style.org/">Compass</a> installed.</p>
 <p>First install Cabin and Grunt globally with this command:</p>
-<textarea readonly class="cli-code">npm install -g cabin grunt-cli</textarea>
-
+<pre><code class="lang-bash"><div class="highlight"><pre>npm install -g cabin grunt-cli
+</pre></div>
+</code></pre>
 <p>Then scaffold a static site generator with the <code>cabin new</code> command:</p>
-<textarea readonly class="cli-code">cabin new blog CabinJS/Candy</textarea>
-
+<pre><code class="lang-bash"><div class="highlight"><pre>cabin new blog CabinJS/Candy
+</pre></div>
+</code></pre>
 <p>The first parameter is the name of the destination folder, and the second is the GitHub username and repository name of a <code>theme</code> to use for the site. If the <code>theme</code> parameter is left blank, the <a href="http://CabinJS.github.io/Candy/">default theme</a> will be used.</p>
 <p>After scaffolding a site generator, you can run it by entering the project directory and running the default Grunt task with this command:</p>
-<textarea readonly class="cli-code">cd blog &amp;&amp; grunt</textarea>
-
+<pre><code class="lang-bash"><div class="highlight"><pre><span class="nb">cd </span>blog <span class="o">&amp;&amp;</span> grunt
+</pre></div>
+</code></pre>
 <p>This will build your site, start a static file server, open a browser tab with the site&#39;s homepage, and start a watch process to rebuild your site when source files change.</p>
 <p>Try editing a <a href="http://daringfireball.net/projects/markdown/syntax#block">markdown</a> file in the <code>posts</code> folder or CSS in the <code>src/styles</code> folder and upon saving, your site will automatically be rebuilt with the updated content or styles. When you edit markdown posts, your browser will automatically refresh to view new content, and when editing styles, the CSS will be injected directly into the page for an immediate update.</p>
 <h1><a name="themes"class="anchor" href="#themes"><span class="header-link"></span></a>Themes</h1>
@@ -45,8 +48,9 @@
 <h3><a name="github-pages"class="anchor" href="#github-pages"><span class="header-link"></span></a>GitHub Pages</h3>
 <p>When deploying to GitHub pages, use the <a href="https://github.com/tschaub/grunt-gh-pages">grunt-gh-pages</a> plugin.</p>
 <p>First install grunt-gh-pages with this command:</p>
-<textarea readonly class="cli-code">npm install grunt-gh-pages --save-dev</textarea>
-
+<pre><code class="lang-bash"><div class="highlight"><pre>npm install grunt-gh-pages --save-dev
+</pre></div>
+</code></pre>
 <p>Then copy and paste the following <code>&#39;gh-pages&#39;</code> config property into your Gruntfile&#39;s <code>initConfig</code> call:</p>
 <pre><code class="lang-js"><div class="highlight"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
   <span class="s1">&#39;gh-pages&#39;</span><span class="o">:</span> <span class="p">{</span>
@@ -85,8 +89,9 @@
 <h3><a name="ftp"class="anchor" href="#ftp"><span class="header-link"></span></a>FTP</h3>
 <p>When deploying via FTP, use the <a href="https://github.com/inossidabile/grunt-contrib-ftpush">grunt-contrib-ftpush</a> plugin.</p>
 <p>First install grunt-contrib-ftpush with this command:</p>
-<textarea readonly class="cli-code">npm install grunt-contrib-ftpush --save-dev</textarea>
-
+<pre><code class="lang-bash"><div class="highlight"><pre>npm install grunt-contrib-ftpush --save-dev
+</pre></div>
+</code></pre>
 <p>Then create a <code>.ftpass</code> file with the following format in the root folder of your site:</p>
 <pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
   <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -125,8 +130,9 @@
 <h3><a name="amazon-s3"class="anchor" href="#amazon-s3"><span class="header-link"></span></a>Amazon S3</h3>
 <p>When deploying to <a href="http://aws.amazon.com/s3/">Amazon S3</a>, use the <a href="https://github.com/pifantastic/grunt-s3">grunt-s3</a> plugin.</p>
 <p>First install grunt-s3 with this command:</p>
-<textarea readonly class="cli-code">npm install grunt-s3 --save-dev</textarea>
-
+<pre><code class="lang-bash"><div class="highlight"><pre>npm install grunt-s3 --save-dev
+</pre></div>
+</code></pre>
 <p>Then create a <code>grunt-aws.json</code> file with the following format in the root folder of your site:</p>
 <pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
   <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;your-aws-key&quot;</span><span class="p">,</span>
@@ -212,10 +218,13 @@
 </code></pre>
 <h3><a name="testing-your-theme"class="anchor" href="#testing-your-theme"><span class="header-link"></span></a>Testing your theme</h3>
 <p>To test your theme, run Cabin with the <code>--local</code> flag. For example if you had a theme in a folder called <code>themeFolder</code> and you wanted to make sure it was working properly, you would run the following command to install it locally into the <code>site</code> folder:</p>
-<textarea readonly class="cli-code">cabin new site themeFolder --local</textarea>
-
+<pre><code class="lang-bash"><div class="highlight"><pre>cabin new site themeFolder --local
+</pre></div>
+</code></pre>
 <p>Then you would run the following command to make sure the theme will work as expected for users once installed:</p>
-<textarea readonly class="cli-code">cd site &amp;&amp; grunt</textarea>
+<pre><code class="lang-bash"><div class="highlight"><pre><span class="nb">cd </span>site <span class="o">&amp;&amp;</span> grunt
+</pre></div>
+</code></pre>
 
       </div>
     </div>
