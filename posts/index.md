@@ -76,29 +76,11 @@ grunt.initConfig({
 });
 ```
 
-Then alter the `build` task to use your repo's name as the base URL when deploying to GitHub pages:
-
-```js
-grunt.registerTask('build', function(target) {
-  if (target === 'GHPages') {
-    gruntPagesConfig.options.data.baseUrl = '/MyRepoName/';
-  }
-
-  grunt.task.run([
-    'clean',
-    'pages',
-    'compass',
-    'copy'
-  ]);
-});
-```
-**Note: be sure to replace `MyRepoName` with the name of your repo**
-
-Finally you can add a `deploy` task which runs the `build` task with the GHPages target and then pushes to GitHub:
+Finally you can add a `deploy` task which runs the `build` task and then pushes to GitHub:
 
 ```js
 grunt.registerTask('deploy', [
-  'build:GHPages',
+  'build',
   'gh-pages'
 ]);
 
