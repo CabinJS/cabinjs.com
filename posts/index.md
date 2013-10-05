@@ -90,12 +90,12 @@ Now you can deploy your site by running the `grunt deploy` command.
 
 ### FTP
 
-When deploying via FTP, use the [grunt-contrib-ftpush](https://github.com/inossidabile/grunt-contrib-ftpush) plugin.
+When deploying via FTP, use the [grunt-ftpush](https://github.com/inossidabile/grunt-ftpush) plugin.
 
-First install grunt-contrib-ftpush with this command:
+First install grunt-ftpush with this command:
 
 ```bash
-npm install grunt-contrib-ftpush --save-dev
+npm install grunt-ftpush --save-dev
 ```
 
 Then create a `.ftpass` file with the following format in the root folder of your site:
