@@ -98,7 +98,7 @@ First install grunt-ftpush with this command:
 npm install grunt-ftpush --save-dev
 ```
 
-Then create a `.ftpass` file with the following format in the root folder of your site:
+Then create a `.ftppass` file with the following format in the root folder of your site:
 
 ```json
 {
