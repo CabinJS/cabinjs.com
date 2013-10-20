@@ -918,7 +918,6 @@ body {
 /* line 114, ../../src/styles/main.scss */
 .title {
   margin: 0;
-  padding: 15px 0 .2em;
   text-align: center;
   font-size: 6em;
 }
@@ -930,7 +929,7 @@ body {
   }
 }
 
-/* line 125, ../../src/styles/main.scss */
+/* line 124, ../../src/styles/main.scss */
 p code {
   background: #ebebff;
   border: 1px solid #e6e6e6;
@@ -943,39 +942,39 @@ p code {
   border-radius: 3px;
 }
 
-/* line 133, ../../src/styles/main.scss */
+/* line 132, ../../src/styles/main.scss */
 code {
   margin: 0;
   padding: 0;
   font-family: Consolas, "Lucida Console", monospace;
 }
 
-/* line 139, ../../src/styles/main.scss */
+/* line 138, ../../src/styles/main.scss */
 pre {
   font-family: Consolas, "Lucida Console", monospace;
   overflow: auto;
   white-space: pre;
 }
 
-/* line 145, ../../src/styles/main.scss */
+/* line 144, ../../src/styles/main.scss */
 .highlight, .cli-code {
   font-size: 1.1em;
   line-height: 1.5em;
   background: #191820;
   color: #bababa;
 }
-/* line 151, ../../src/styles/main.scss */
+/* line 150, ../../src/styles/main.scss */
 .highlight pre, .cli-code pre {
   margin: 0;
   padding: 25px;
 }
 
-/* line 157, ../../src/styles/main.scss */
+/* line 156, ../../src/styles/main.scss */
 textarea {
   resize: none;
 }
 
-/* line 161, ../../src/styles/main.scss */
+/* line 160, ../../src/styles/main.scss */
 .cli-code {
   width: 100%;
   white-space: nowrap;
@@ -987,14 +986,14 @@ textarea {
   height: 82px;
 }
 
-/* line 172, ../../src/styles/main.scss */
+/* line 171, ../../src/styles/main.scss */
 blockquote {
   border-left: 4px solid #dedede;
   padding: 0 15px;
   color: #787878;
 }
 
-/* line 178, ../../src/styles/main.scss */
+/* line 177, ../../src/styles/main.scss */
 .theme-wrapper {
   width: 100%;
   margin: 30px 0;
@@ -1007,7 +1006,7 @@ blockquote {
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
 }
 
-/* line 188, ../../src/styles/main.scss */
+/* line 187, ../../src/styles/main.scss */
 .theme-img {
   width: 100%;
   float: right;
@@ -1016,20 +1015,20 @@ blockquote {
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
 }
 
-/* line 195, ../../src/styles/main.scss */
+/* line 194, ../../src/styles/main.scss */
 .group:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 203, ../../src/styles/main.scss */
+/* line 202, ../../src/styles/main.scss */
 h1:hover .header-link, h2:hover .header-link, h3:hover .header-link,
 h4:hover .header-link, h5:hover .header-link, h6:hover .header-link {
   visibility: visible;
 }
 
-/* line 208, ../../src/styles/main.scss */
+/* line 207, ../../src/styles/main.scss */
 .header-link {
   margin-left: -1.7em;
   font-size: .65em;
