@@ -3,7 +3,7 @@
   date:   "2013-12-15"
 }
 
-Simple and extensible static site generator powered by [Grunt](http://gruntjs.com/).
+Simple and extensible static site generator powered by <a style="color: #E48632"href="http://gruntjs.com/">Grunt</a>.
 
 # Getting started
 
